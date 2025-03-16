@@ -15,7 +15,7 @@ Let's code, connect, and create awesome things together!
 [![Gmail](https://img.shields.io/badge/-tayyababbaxi661@gmail.com-c14438?style=flat&logo=Gmail&logoColor=white)](mailto:tayyababbaxi661@gmail.com)
 <!-- [![Skype](https://img.shields.io/static/v1.svg?label=Skype&message=tayyababbashaider&style=flat&color=blue)](https://join.skype.com/invite/wfHtrH7tedlg) -->
 [![LinkedIn](https://img.shields.io/static/v1.svg?label=LinkedIn&message=tayyababbashaider&logo=linkedin&style=flat&color=blue)](https://www.linkedin.com/in/tayyababbashaider/)
-[![Twitter](https://img.shields.io/badge/-tayyababbashaider-000?style=flat&logo=X&logoColor=white)](https://x.com/tayyababbashaider)
+[![Twitter](https://img.shields.io/badge/-tayyababbashaider-000?style=flat&logo=X&logoColor=white)](https://x.com/tayyababbasdev)
 [![Youtube](https://img.shields.io/badge/-@tayyab-c14438?style=flat&logo=Youtube&logoColor=white)](https://www.youtube.com/@tayyababbashaider)
 [![Website](https://img.shields.io/badge/-tayyababbashaider.github.io-0078D4?style=flat&logo=Homepage&logoColor=white)](https://tayyababbashaider.github.io/)
 
@@ -24,8 +24,8 @@ Let's code, connect, and create awesome things together!
 #### ☕️ Support
 Advance thanks for visiting, supporting, and welcome awesome feedback :))
 
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/P5P018ZSIU)
-[![Support me on Patreon](https://img.shields.io/badge/Support%20me%20on%20Patreon-000?style=for-the-badge&logo=patreon&logoColor=white)](https://www.patreon.com/bePatron?u=156223860)
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/)
+[![Support me on Patreon](https://img.shields.io/badge/Support%20me%20on%20Patreon-000?style=for-the-badge&logo=patreon&logoColor=white)](https://www.patreon.com/join/tayyababbas)
 
 ##
 

@@ -536,7 +536,7 @@ body:after {
 
 .prose {
     color: var(--tw-prose-body);
-    max-width: 65ch
+    max-width: 100%
 }
 
 .prose :where([class~=lead]):not(:where([class~=not-prose] *)) {

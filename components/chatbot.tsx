@@ -169,24 +169,17 @@ const PORTFOLIO_DATA = {
 }
 
 async function generateResponse(query: string): Promise<string> {
-  // Simple response logic - in a real app, you'd integrate with an AI service
-  const lowerQuery = query.toLowerCase()
+  try {
+    const res = await fetch("/api/chat", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ query, portfolioData: PORTFOLIO_DATA }),
+    });
 
-  if (lowerQuery.includes("experience") || lowerQuery.includes("work")) {
-    return "I have 4+ years of professional experience as a Senior Software Engineer and Solutions Architect. I've worked at companies like IT Roadway, Shark Innovation Labs, and MettleSol, specializing in React, Vue, Laravel, and AWS services."
+    const data = await res.json();
+    return data.text;
+  } catch (err) {
+    console.error("Error calling Cohere:", err);
+    return "I’m having trouble connecting to the assistant right now. Please try again later.";
   }
-
-  if (lowerQuery.includes("skills") || lowerQuery.includes("tech")) {
-    return "My technical skills include React.js/Next.js, Vue.js, TypeScript, Node.js, PHP Laravel, AWS services, Docker, and various databases. I specialize in building scalable web applications and serverless architectures."
-  }
-
-  if (lowerQuery.includes("contact") || lowerQuery.includes("email")) {
-    return `You can reach me at ${PORTFOLIO_DATA.contact.email} or connect with me on LinkedIn at ${PORTFOLIO_DATA.profiles.linkedin}. I'm always open to discussing new opportunities!`
-  }
-
-  if (lowerQuery.includes("projects")) {
-    return "I've worked on various projects including Hijaz World Platform, educational apps, and e-commerce solutions. You can check out my GitHub profile for more details on my open-source contributions."
-  }
-
-  return "Thanks for your question! I'm here to help you learn more about my experience, skills, and projects. Feel free to ask about my work experience, technical skills, or how to get in touch!"
 }

@@ -1,0 +1,1681 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tayyab Abbas Haider</title>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Tayyab Abbas Senior Software Engineer" />
+    <meta name="keywords"
+        content="Tayyab, Tayyab Abbas, Tayyab Abbas Haider, tayyababbashaider, tayyababbas, tayyab, tayababbasdev, software engineer, React, PHP, Elixir, HTML, CSS, JavaScript, JQuery, Liquid, Laravel, Next JS, CodeIgniter, Phoenix, MeteorJs, Shopify, MySql, Postgressql, MongoDB, AWS, Serverless, Docker, Agile, Jira, Trello, Bitbucket, Git, Control version, 'Freelancer', 'fiver', 'upwork', 'senior', 'software', 'engineer', 'tayyab', abbas', 'haider', 'dev'" />
+    <meta name="author" content="Tayyab Abbas" />
+    <meta name="Version" content="2.0" />
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="images/favicon.ico">
+
+    <!-- Include the Tailwind css file -->
+    <link rel="stylesheet" href="./assets/css/tailwind.css">
+
+
+
+    <style>
+        .cbt-shadow {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .18), 0 6px 10px rgba(0, 0, 0, .12)
+        }
+
+        .cbt-fixed {
+            position: fixed;
+            right: 24px;
+            bottom: 24px;
+            z-index: 9999
+        }
+
+        .cbt-btn {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            border: none;
+            background: #6c63ff;
+            color: #fff;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform .2s ease, box-shadow .2s ease
+        }
+
+        .cbt-btn:hover {
+            transform: translateY(-2px)
+        }
+
+        .cbt-badge {
+            position: absolute;
+            top: -6px;
+            right: -6px;
+            background: #ff4757;
+            color: #fff;
+            border-radius: 999px;
+            font-size: 10px;
+            line-height: 1;
+            padding: 4px 6px
+        }
+
+        .cbt-panel {
+            position: fixed;
+            right: 24px;
+            bottom: 92px;
+            width: 320px;
+            max-height: 65vh;
+            background: #fff;
+            border-radius: 16px;
+            overflow: hidden;
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(10px);
+            transition: opacity .2s ease, transform .2s ease
+        }
+
+        .cbt-panel.dark {
+            background: #0f172a;
+            color: #e2e8f0
+        }
+
+        .cbt-panel.open {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateY(0)
+        }
+
+        .cbt-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 14px;
+            background: #6c63ff;
+            color: #fff
+        }
+
+        .cbt-title {
+            font-weight: 600;
+            font-size: 14px
+        }
+
+        .cbt-close {
+            background: transparent;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            font-size: 18px;
+            opacity: .9
+        }
+
+        .cbt-body {
+            background: linear-gradient(180deg, rgba(99, 102, 241, 0.06), transparent 120%);
+            padding: 12px;
+            height: 320px;
+            max-height: 50vh;
+            overflow: auto
+        }
+
+        .cbt-msg {
+            display: flex;
+            margin-bottom: 10px;
+            gap: 8px
+        }
+
+        .cbt-msg .bubble {
+            padding: 10px 12px;
+            border-radius: 14px;
+            max-width: 80%;
+            font-size: 13px;
+            line-height: 1.3
+        }
+
+        .cbt-msg.user {
+            justify-content: flex-end
+        }
+
+        .cbt-msg.user .bubble {
+            background: #6c63ff;
+            color: #fff;
+            border-bottom-right-radius: 6px;
+            overflow-wrap: break-word;
+        }
+
+        .cbt-msg.bot .bubble {
+            background: #f1f5f9;
+            color: #0f172a;
+            border-bottom-left-radius: 6px;
+            overflow-wrap: break-word;
+        }
+
+        .cbt-input {
+            display: flex;
+            gap: 8px;
+            padding: 10px;
+            border-top: 1px solid #e2e8f0;
+            background: #fff
+        }
+
+        .cbt-input input {
+            flex: 1;
+            border: 1px solid #e2e8f0;
+            border-radius: 999px;
+            padding: 10px 12px;
+            font-size: 13px;
+            outline: none
+        }
+
+        .cbt-input button {
+            border: none;
+            background: #6c63ff;
+            color: #fff;
+            border-radius: 999px;
+            padding: 10px 14px;
+            font-size: 13px;
+            cursor: pointer
+        }
+
+        @media (max-width: 480px) {
+            .cbt-panel {
+                right: 12px;
+                left: 12px;
+                width: auto;
+                bottom: 84px
+            }
+
+            .cbt-fixed {
+                right: 12px;
+                bottom: 12px
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="relative flex h-full min-h-screen w-full">
+
+        <!-- nav start -->
+        <nav id="side-nav"
+            class="absolute -translate-x-full 3xl:w-80 z-30 flex h-full max-h-screen min-h-screen w-3/4 flex-none transform flex-col overflow-y-auto border-r border-gray-150 bg-white pb-10 transition duration-200 ease-in-out dark:border-gray-800 dark:bg-gray-900 sm:w-1/2 sm:pb-0 md:w-1/3 lg:relative lg:z-auto lg:w-56 lg:translate-x-0 lg:bg-gray-50 lg:dark:bg-gray-900 2xl:w-72">
+
+            <div
+                class="filter-blur sticky top-0 z-10 flex items-center justify-between px-3 py-4 dark:border-b dark:border-gray-900">
+                <!-- Left: Profile Info -->
+                <div class="flex items-center space-x-3">
+                    <img src="assets/images/tayyab/tayyababbas.jpg" alt="me" class="personal-image">
+                    <div>
+                        <h2 class="text-sm font-bold text-primary transform-gpu line-clamp-1 text-white">
+                            Tayyab Abbas Haider
+                        </h2>
+                        <span class="text-sm text-primary transform-gpu line-clamp-1 text-white" style="opacity: 0.7">
+                            <a href="mailto:tayyababbaxi661@gmail.com">tayyababbaxi661@gmail.com</a>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Right: Cancel Button -->
+                <span id="burger-menu-close"
+                    class="z-20 mb-3 p-2 rounded-md cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-800 lg:hidden"
+                    style="display: none;">
+                    X
+                </span>
+            </div>
+
+
+            <div class="flex-1 px-3 py-3 space-y-1">
+                <ul class="space-y-1">
+
+                    <!-- li start  -->
+                    <li class="flex items-stretch space-x-1"><a
+                            class="flex flex-1 items-center space-x-3 rounded-md px-2 py-1.5 text-sm font-medium  bg-black text-white hover:bg-black hover:text-white dark:bg-gray-700 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white"
+                            href="#">
+                            <span class="flex items-center justify-center w-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="16" height="16"
+                                    fill="currentColor">
+                                    <path
+                                        d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z">
+                                    </path>
+                                </svg>
+                            </span>
+                            <span class="flex-1">Home</span>
+                        </a>
+                    </li>
+                    <!-- li end  -->
+
+                    <!-- li start  -->
+                    <li class="flex items-stretch space-x-1" disabled>
+                        <a class="flex flex-1 items-center space-x-3 rounded-md px-2 py-1.5 text-sm font-medium  text-gray-700 dark:text-gray-200 sm:hover:bg-gray-200 sm:hover:text-gray-900 sm:dark:hover:bg-gray-700 sm:dark:hover:text-gray-200"
+                            href="#">
+                            <span class="flex items-center justify-center w-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="16" height="16"
+                                    fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                        d="M2 5a2 2 0 012-2h8a2 2 0 012 2v10a2 2 0 002 2H4a2 2 0 01-2-2V5zm3 1h6v4H5V6zm6 6H5v2h6v-2z"
+                                        clip-rule="evenodd"></path>
+                                    <path d="M15 7h1a2 2 0 012 2v5.5a1.5 1.5 0 01-3 0V7z"></path>
+                                </svg>
+                            </span>
+                            <span class="flex-1">Writing</span>
+                        </a>
+                    </li>
+                    <!-- li end  -->
+                </ul>
+
+                <ul class="space-y-1">
+                    <h4 class="px-2 pt-5 pb-2 text-xs font-semibold text-gray-1000 text-opacity-40 dark:text-white">Me
+                    </h4>
+
+                    <!-- li start  -->
+                    <li class="flex items-stretch space-x-1" disabled>
+                        <a class="flex flex-1 items-center space-x-3 rounded-md px-2 py-1.5 text-sm font-medium  text-gray-700 dark:text-gray-200 sm:hover:bg-gray-200 sm:hover:text-gray-900 sm:dark:hover:bg-gray-700 sm:dark:hover:text-gray-200"
+                            href="#">
+                            <span class="flex items-center justify-center w-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="16" height="16"
+                                    fill="currentColor">
+                                    <path d="M5 4a2 2 0 012-2h6a2 2 0 012 2v14l-5-2.5L5 18V4z"></path>
+                                </svg>
+                            </span>
+                            <span class="flex-1">Bookmarks</span>
+                        </a>
+                    </li>
+                    <!-- li end  -->
+
+                    <!-- li start  -->
+                    <li class="flex items-stretch space-x-1" disabled>
+                        <a class="flex flex-1 items-center space-x-3 rounded-md px-2 py-1.5 text-sm font-medium  text-gray-700 dark:text-gray-200 sm:hover:bg-gray-200 sm:hover:text-gray-900 sm:dark:hover:bg-gray-700 sm:dark:hover:text-gray-200"
+                            href="#">
+                            <span class="flex items-center justify-center w-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="16" height="16"
+                                    fill="currentColor">
+                                    <path
+                                        d="M7 3a1 1 0 000 2h6a1 1 0 100-2H7zM4 7a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1zM2 11a2 2 0 012-2h12a2 2 0 012 2v4a2 2 0 01-2 2H4a2 2 0 01-2-2v-4z">
+                                    </path>
+                                </svg>
+                            </span>
+                            <span class="flex-1">Stack</span>
+                        </a>
+                    </li>
+                    <!-- li end  -->
+                </ul>
+
+                <ul class="space-y-1">
+                    <h4 class="px-2 pt-5 pb-2 text-xs font-semibold text-gray-1000 text-opacity-40 dark:text-white">
+                        Projects</h4>
+
+                    <!-- li start  -->
+                    <li class="flex items-stretch space-x-1" style="display: none;">
+                        <a class="flex flex-1 items-center space-x-3 rounded-md px-2 py-1.5 text-sm font-medium  text-gray-700 dark:text-gray-200 sm:hover:bg-gray-200 sm:hover:text-gray-900 sm:dark:hover:bg-gray-700 sm:dark:hover:text-gray-200"
+                            href="#">
+                            <span class="flex items-center justify-center w-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="16" height="16"
+                                    fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                        d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </span>
+                            <span class="flex-1">Security Checklist</span>
+                        </a>
+                    </li>
+                    <!-- li end  -->
+
+                    <!-- li start  -->
+                    <li class="flex items-stretch space-x-1">
+                        <a class="flex flex-1 items-center space-x-3 rounded-md px-2 py-1.5 text-sm font-medium  text-gray-700 dark:text-gray-200 sm:hover:bg-gray-200 sm:hover:text-gray-900 sm:dark:hover:bg-gray-700 sm:dark:hover:text-gray-200"
+                            href="https://wisecompass.com/">
+                            <span class="flex items-center justify-center w-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="16" height="16"
+                                    fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                        d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </span>
+                            <span class="flex-1">Wise Compass</span>
+                            <span
+                                class="flex items-center justify-center w-4 text-black text-opacity-40 dark:text-white">
+                                <svg width="10" height="9" viewBox="0 0 10 9" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M9.00195 6.32617V0.824219C9.00195 0.490234 8.79102 0.267578 8.45117 0.267578L2.94922 0.279297C2.62109 0.279297 2.41016 0.519531 2.41016 0.794922C2.41016 1.07031 2.65039 1.30469 2.92578 1.30469H4.66602L7.45508 1.19922L6.39453 2.13672L1.16211 7.38086C1.05664 7.48633 0.998047 7.61523 0.998047 7.73828C0.998047 8.01367 1.24414 8.27734 1.53125 8.27734C1.66602 8.27734 1.78906 8.22461 1.89453 8.11914L7.13281 2.875L8.07617 1.81445L7.96484 4.48047V6.34961C7.96484 6.61914 8.19922 6.86523 8.48633 6.86523C8.76172 6.86523 9.00195 6.63672 9.00195 6.32617Z"
+                                        fill="currentColor"></path>
+                                </svg>
+                            </span>
+                        </a>
+                    </li>
+                    <!-- li end  -->
+
+                    <!-- li start  -->
+                    <li class="flex items-stretch space-x-1">
+                        <a class="flex flex-1 items-center space-x-3 rounded-md px-2 py-1.5 text-sm font-medium  text-gray-700 dark:text-gray-200 sm:hover:bg-gray-200 sm:hover:text-gray-900 sm:dark:hover:bg-gray-700 sm:dark:hover:text-gray-200"
+                            href="https://bitgofulfill.com/">
+                            <span class="flex items-center justify-center w-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="16" height="16"
+                                    fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                        d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </span>
+                            <span class="flex-1">Bitgo Fulfill</span>
+                            <span
+                                class="flex items-center justify-center w-4 text-black text-opacity-40 dark:text-white">
+                                <svg width="10" height="9" viewBox="0 0 10 9" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M9.00195 6.32617V0.824219C9.00195 0.490234 8.79102 0.267578 8.45117 0.267578L2.94922 0.279297C2.62109 0.279297 2.41016 0.519531 2.41016 0.794922C2.41016 1.07031 2.65039 1.30469 2.92578 1.30469H4.66602L7.45508 1.19922L6.39453 2.13672L1.16211 7.38086C1.05664 7.48633 0.998047 7.61523 0.998047 7.73828C0.998047 8.01367 1.24414 8.27734 1.53125 8.27734C1.66602 8.27734 1.78906 8.22461 1.89453 8.11914L7.13281 2.875L8.07617 1.81445L7.96484 4.48047V6.34961C7.96484 6.61914 8.19922 6.86523 8.48633 6.86523C8.76172 6.86523 9.00195 6.63672 9.00195 6.32617Z"
+                                        fill="currentColor"></path>
+                                </svg>
+                            </span>
+                        </a>
+                    </li>
+                    <!-- li end  -->
+
+                    <!-- li start  -->
+                    <li class="flex items-stretch space-x-1">
+                        <a class="flex flex-1 items-center space-x-3 rounded-md px-2 py-1.5 text-sm font-medium  text-gray-700 dark:text-gray-200 sm:hover:bg-gray-200 sm:hover:text-gray-900 sm:dark:hover:bg-gray-700 sm:dark:hover:text-gray-200"
+                            href="https://agent.alsharqi.co/#/login">
+                            <span class="flex items-center justify-center w-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="16" height="16"
+                                    fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                        d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </span>
+                            <span class="flex-1">Future of Logistics</span>
+                            <span
+                                class="flex items-center justify-center w-4 text-black text-opacity-40 dark:text-white">
+                                <svg width="10" height="9" viewBox="0 0 10 9" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M9.00195 6.32617V0.824219C9.00195 0.490234 8.79102 0.267578 8.45117 0.267578L2.94922 0.279297C2.62109 0.279297 2.41016 0.519531 2.41016 0.794922C2.41016 1.07031 2.65039 1.30469 2.92578 1.30469H4.66602L7.45508 1.19922L6.39453 2.13672L1.16211 7.38086C1.05664 7.48633 0.998047 7.61523 0.998047 7.73828C0.998047 8.01367 1.24414 8.27734 1.53125 8.27734C1.66602 8.27734 1.78906 8.22461 1.89453 8.11914L7.13281 2.875L8.07617 1.81445L7.96484 4.48047V6.34961C7.96484 6.61914 8.19922 6.86523 8.48633 6.86523C8.76172 6.86523 9.00195 6.63672 9.00195 6.32617Z"
+                                        fill="currentColor"></path>
+                                </svg>
+                            </span>
+                        </a>
+                    </li>
+                    <!-- li end  -->
+
+                    <!-- li start  -->
+                    <li class="flex items-stretch space-x-1">
+                        <a class="flex flex-1 items-center space-x-3 rounded-md px-2 py-1.5 text-sm font-medium  text-gray-700 dark:text-gray-200 sm:hover:bg-gray-200 sm:hover:text-gray-900 sm:dark:hover:bg-gray-700 sm:dark:hover:text-gray-200"
+                            href="https://www.joblinx.com.au/">
+                            <span class="flex items-center justify-center w-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="16" height="16"
+                                    fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                        d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </span>
+                            <span class="flex-1">Joblinx</span>
+                            <span
+                                class="flex items-center justify-center w-4 text-black text-opacity-40 dark:text-white">
+                                <svg width="10" height="9" viewBox="0 0 10 9" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M9.00195 6.32617V0.824219C9.00195 0.490234 8.79102 0.267578 8.45117 0.267578L2.94922 0.279297C2.62109 0.279297 2.41016 0.519531 2.41016 0.794922C2.41016 1.07031 2.65039 1.30469 2.92578 1.30469H4.66602L7.45508 1.19922L6.39453 2.13672L1.16211 7.38086C1.05664 7.48633 0.998047 7.61523 0.998047 7.73828C0.998047 8.01367 1.24414 8.27734 1.53125 8.27734C1.66602 8.27734 1.78906 8.22461 1.89453 8.11914L7.13281 2.875L8.07617 1.81445L7.96484 4.48047V6.34961C7.96484 6.61914 8.19922 6.86523 8.48633 6.86523C8.76172 6.86523 9.00195 6.63672 9.00195 6.32617Z"
+                                        fill="currentColor"></path>
+                                </svg>
+                            </span>
+                        </a>
+                    </li>
+                    <!-- li end  -->
+
+                    <!-- li start  -->
+                    <li class="flex items-stretch space-x-1">
+                        <a class="flex flex-1 items-center space-x-3 rounded-md px-2 py-1.5 text-sm font-medium  text-gray-700 dark:text-gray-200 sm:hover:bg-gray-200 sm:hover:text-gray-900 sm:dark:hover:bg-gray-700 sm:dark:hover:text-gray-200"
+                            href="https://www.crunchbase.com/organization/emotify">
+                            <span class="flex items-center justify-center w-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="16" height="16"
+                                    fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                        d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </span>
+                            <span class="flex-1">Emotify</span>
+                            <span
+                                class="flex items-center justify-center w-4 text-black text-opacity-40 dark:text-white">
+                                <svg width="10" height="9" viewBox="0 0 10 9" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M9.00195 6.32617V0.824219C9.00195 0.490234 8.79102 0.267578 8.45117 0.267578L2.94922 0.279297C2.62109 0.279297 2.41016 0.519531 2.41016 0.794922C2.41016 1.07031 2.65039 1.30469 2.92578 1.30469H4.66602L7.45508 1.19922L6.39453 2.13672L1.16211 7.38086C1.05664 7.48633 0.998047 7.61523 0.998047 7.73828C0.998047 8.01367 1.24414 8.27734 1.53125 8.27734C1.66602 8.27734 1.78906 8.22461 1.89453 8.11914L7.13281 2.875L8.07617 1.81445L7.96484 4.48047V6.34961C7.96484 6.61914 8.19922 6.86523 8.48633 6.86523C8.76172 6.86523 9.00195 6.63672 9.00195 6.32617Z"
+                                        fill="currentColor"></path>
+                                </svg>
+                            </span>
+                        </a>
+                    </li>
+                    <!-- li end  -->
+
+                    <!-- li start  -->
+                    <li class="flex items-stretch space-x-1">
+                        <a class="flex flex-1 items-center space-x-3 rounded-md px-2 py-1.5 text-sm font-medium  text-gray-700 dark:text-gray-200 sm:hover:bg-gray-200 sm:hover:text-gray-900 sm:dark:hover:bg-gray-700 sm:dark:hover:text-gray-200"
+                            href="#">
+                            <span class="flex items-center justify-center w-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="16" height="16"
+                                    fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                        d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </span>
+                            <span class="flex-1">BeNoticed</span>
+                        </a>
+                    </li>
+                    <!-- li end  -->
+                </ul>
+
+                <ul class="space-y-1">
+                    <h4 class="px-2 pt-5 pb-2 text-xs font-semibold text-gray-1000 text-opacity-40 dark:text-white">
+                        Online</h4>
+
+                    <!-- li start  -->
+                    <li class="flex items-stretch space-x-1">
+                        <a target="_blank" rel="noopener noreferrer"
+                            class="flex flex-1 items-center space-x-3 rounded-md px-2 py-1.5 text-sm font-medium  text-gray-700 dark:text-gray-200 sm:hover:bg-gray-200 sm:hover:text-gray-900 sm:dark:hover:bg-gray-700 sm:dark:hover:text-gray-200"
+                            href="https://join.skype.com/invite/wfHtrH7tedlg">
+                            <span class="flex items-center justify-center w-4">
+                                <svg fill="currentColor" width="16" height="16" viewBox="0 0 1920 1920"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                    <g id="SVGRepo_iconCarrier">
+                                        <path
+                                            d="M1364.668 1315.426c-33.543 47.774-83.124 85.722-147.275 112.715-63.812 26.541-140.16 40.094-227.012 40.094-104.132 0-191.548-18.41-259.652-54.89-48.79-26.427-88.997-62.456-119.604-106.841-30.833-44.725-46.42-89.224-46.42-132.029 0-26.767 10.166-49.92 30.382-69.12 19.765-18.748 45.177-28.348 75.558-28.348 24.96 0 46.531 7.68 64.037 22.475 16.603 14.344 30.946 35.35 42.58 62.683 12.762 29.59 26.766 54.55 41.562 74.428 14.343 18.974 34.898 34.899 60.988 47.435 26.315 12.424 61.666 18.861 105.374 18.861 59.972 0 109.214-12.875 146.146-38.287 36.14-24.96 53.76-54.776 53.76-91.256 0-28.913-9.148-51.501-28.01-69.459-19.877-18.522-45.967-33.092-77.477-42.918-32.98-10.277-77.817-21.458-133.158-33.204-75.332-16.264-139.37-35.577-190.306-57.374-51.953-22.25-93.967-53.083-124.574-91.935-31.172-39.303-46.983-88.545-46.983-146.484 0-55.228 16.602-104.923 49.355-147.84 32.414-42.692 79.736-75.784 140.725-98.598 60.31-22.25 131.915-33.77 213.007-33.77 64.715 0 121.863 7.455 169.411 22.476 47.774 15.021 88.094 35.238 119.83 60.198 31.963 25.073 55.68 51.953 70.59 79.85 14.907 28.234 22.7 56.357 22.7 83.35 0 26.202-10.164 49.92-29.816 70.588-19.878 20.781-44.95 31.398-74.541 31.398-26.767 0-47.887-6.551-62.57-19.652-13.553-12.085-27.67-30.946-43.256-58.052-18.184-34.673-40.094-61.892-65.167-81.205-24.396-18.635-65.054-28.122-121.073-28.122-52.066 0-94.306 10.503-125.704 31.285-30.38 19.99-45.063 42.917-45.063 70.023 0 16.715 4.743 30.607 14.57 42.579 10.277 12.762 24.846 23.83 43.143 32.979 19.087 9.826 38.739 17.393 58.39 22.927 20.217 5.647 54.1 13.892 100.405 24.734 58.73 12.762 112.715 26.88 160.49 42.353 48.338 15.586 90.24 34.786 124.235 57.148 34.56 22.701 62.23 51.953 81.656 86.965 19.652 35.012 29.59 78.381 29.59 128.753 0 60.085-17.053 114.974-50.823 163.087m500.104-151.68c13.779-62.344 21.233-127.059 21.233-193.807 0-498.635-409.977-902.852-915.84-902.852-53.309 0-105.713 4.518-156.537 13.214C731.746 29.365 634.955 0 531.05 0 237.854 0 0 234.353 0 523.595c0 96.678 26.767 187.144 72.96 264.96-12.085 58.617-18.41 119.266-18.41 181.384 0 498.748 409.864 903.077 915.615 903.077 57.374 0 113.28-5.308 167.717-15.134 74.767 39.53 160.264 62.118 251.182 62.118 293.308 0 530.936-234.353 530.936-523.595 0-83.577-19.99-162.523-55.228-232.66"
+                                            fill-rule="evenodd"></path>
+                                    </g>
+                                </svg>
+                            </span>
+                            <span class="flex-1">Skype</span>
+                            <span style="font-size: small;">tayyababbashaider</span>
+                            <span
+                                class="flex items-center justify-center w-4 text-black text-opacity-40 dark:text-white"><svg
+                                    width="10" height="9" viewBox="0 0 10 9" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M9.00195 6.32617V0.824219C9.00195 0.490234 8.79102 0.267578 8.45117 0.267578L2.94922 0.279297C2.62109 0.279297 2.41016 0.519531 2.41016 0.794922C2.41016 1.07031 2.65039 1.30469 2.92578 1.30469H4.66602L7.45508 1.19922L6.39453 2.13672L1.16211 7.38086C1.05664 7.48633 0.998047 7.61523 0.998047 7.73828C0.998047 8.01367 1.24414 8.27734 1.53125 8.27734C1.66602 8.27734 1.78906 8.22461 1.89453 8.11914L7.13281 2.875L8.07617 1.81445L7.96484 4.48047V6.34961C7.96484 6.61914 8.19922 6.86523 8.48633 6.86523C8.76172 6.86523 9.00195 6.63672 9.00195 6.32617Z"
+                                        fill="currentColor"></path>
+                                </svg>
+                            </span>
+                        </a>
+                    </li>
+                    <!-- li end  -->
+
+                    <!-- li start  -->
+                    <li class="flex items-stretch space-x-1">
+                        <a target="_blank" rel="noopener noreferrer"
+                            class="flex flex-1 items-center space-x-3 rounded-md px-2 py-1.5 text-sm font-medium  text-gray-700 dark:text-gray-200 sm:hover:bg-gray-200 sm:hover:text-gray-900 sm:dark:hover:bg-gray-700 sm:dark:hover:text-gray-200"
+                            href="https://github.com/tayyababbashaider">
+                            <span class="flex items-center justify-center w-4">
+                                <svg viewBox="0 0 17 16" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    fill="currentColor">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M8.06478 0C3.61133 0 0 3.6722 0 8.20248C0 11.8266 2.31081 14.9013 5.51518 15.9859C5.91823 16.0618 6.06622 15.808 6.06622 15.5913C6.06622 15.3957 6.05875 14.7496 6.05528 14.0642C3.81164 14.5604 3.3382 13.0963 3.3382 13.0963C2.97134 12.1483 2.44275 11.8961 2.44275 11.8961C1.71103 11.387 2.49791 11.3975 2.49791 11.3975C3.30775 11.4552 3.73417 12.2428 3.73417 12.2428C4.45347 13.4968 5.62083 13.1343 6.08103 12.9247C6.15342 12.3947 6.36245 12.0325 6.59305 11.8278C4.80178 11.6204 2.91872 10.9171 2.91872 7.77405C2.91872 6.87851 3.23377 6.14679 3.74966 5.57235C3.66593 5.36561 3.38987 4.53148 3.8278 3.40163C3.8278 3.40163 4.50501 3.18118 6.04619 4.24243C6.68951 4.0607 7.37942 3.96953 8.06478 3.96644C8.75018 3.96953 9.44062 4.0607 10.0851 4.24243C11.6244 3.18118 12.3007 3.40163 12.3007 3.40163C12.7397 4.53148 12.4635 5.36561 12.3798 5.57235C12.8969 6.14679 13.2098 6.87851 13.2098 7.77405C13.2098 10.9245 11.3231 11.6182 9.52728 11.8213C9.81657 12.0758 10.0743 12.575 10.0743 13.3403C10.0743 14.4377 10.065 15.321 10.065 15.5913C10.065 15.8096 10.2101 16.0653 10.6189 15.9848C13.8216 14.899 16.1294 11.8254 16.1294 8.20248C16.1294 3.6722 12.5187 0 8.06478 0Z">
+                                    </path>
+                                </svg>
+                            </span>
+                            <span class="flex-1">GitHub</span>
+                            <span
+                                class="flex items-center justify-center w-4 text-black text-opacity-40 dark:text-white"><svg
+                                    width="10" height="9" viewBox="0 0 10 9" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M9.00195 6.32617V0.824219C9.00195 0.490234 8.79102 0.267578 8.45117 0.267578L2.94922 0.279297C2.62109 0.279297 2.41016 0.519531 2.41016 0.794922C2.41016 1.07031 2.65039 1.30469 2.92578 1.30469H4.66602L7.45508 1.19922L6.39453 2.13672L1.16211 7.38086C1.05664 7.48633 0.998047 7.61523 0.998047 7.73828C0.998047 8.01367 1.24414 8.27734 1.53125 8.27734C1.66602 8.27734 1.78906 8.22461 1.89453 8.11914L7.13281 2.875L8.07617 1.81445L7.96484 4.48047V6.34961C7.96484 6.61914 8.19922 6.86523 8.48633 6.86523C8.76172 6.86523 9.00195 6.63672 9.00195 6.32617Z"
+                                        fill="currentColor"></path>
+                                </svg>
+                            </span>
+                        </a>
+                    </li>
+                    <!-- li end  -->
+
+                    <!-- li start  -->
+                    <li class="flex items-stretch space-x-1">
+                        <a target="_blank" rel="noopener noreferrer"
+                            class="flex flex-1 items-center space-x-3 rounded-md px-2 py-1.5 text-sm font-medium  text-gray-700 dark:text-gray-200 sm:hover:bg-gray-200 sm:hover:text-gray-900 sm:dark:hover:bg-gray-700 sm:dark:hover:text-gray-200"
+                            href="https://www.linkedin.com/in/tayyababbashaider">
+                            <span class="flex items-center justify-center w-4">
+                                <svg fill="currentColor" width="16" height="16" viewBox="0 0 32 32"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                    <g id="SVGRepo_iconCarrier">
+                                        <title>linkedin</title>
+                                        <path
+                                            d="M28.778 1.004h-25.56c-0.008-0-0.017-0-0.027-0-1.199 0-2.172 0.964-2.186 2.159v25.672c0.014 1.196 0.987 2.161 2.186 2.161 0.010 0 0.019-0 0.029-0h25.555c0.008 0 0.018 0 0.028 0 1.2 0 2.175-0.963 2.194-2.159l0-0.002v-25.67c-0.019-1.197-0.994-2.161-2.195-2.161-0.010 0-0.019 0-0.029 0h0.001zM9.9 26.562h-4.454v-14.311h4.454zM7.674 10.293c-1.425 0-2.579-1.155-2.579-2.579s1.155-2.579 2.579-2.579c1.424 0 2.579 1.154 2.579 2.578v0c0 0.001 0 0.002 0 0.004 0 1.423-1.154 2.577-2.577 2.577-0.001 0-0.002 0-0.003 0h0zM26.556 26.562h-4.441v-6.959c0-1.66-0.034-3.795-2.314-3.795-2.316 0-2.669 1.806-2.669 3.673v7.082h-4.441v-14.311h4.266v1.951h0.058c0.828-1.395 2.326-2.315 4.039-2.315 0.061 0 0.121 0.001 0.181 0.003l-0.009-0c4.5 0 5.332 2.962 5.332 6.817v7.855z">
+                                        </path>
+                                    </g>
+                                </svg>
+                            </span>
+                            <span class="flex-1">LinkedIn</span>
+                            <span
+                                class="flex items-center justify-center w-4 text-black text-opacity-40 dark:text-white"><svg
+                                    width="10" height="9" viewBox="0 0 10 9" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M9.00195 6.32617V0.824219C9.00195 0.490234 8.79102 0.267578 8.45117 0.267578L2.94922 0.279297C2.62109 0.279297 2.41016 0.519531 2.41016 0.794922C2.41016 1.07031 2.65039 1.30469 2.92578 1.30469H4.66602L7.45508 1.19922L6.39453 2.13672L1.16211 7.38086C1.05664 7.48633 0.998047 7.61523 0.998047 7.73828C0.998047 8.01367 1.24414 8.27734 1.53125 8.27734C1.66602 8.27734 1.78906 8.22461 1.89453 8.11914L7.13281 2.875L8.07617 1.81445L7.96484 4.48047V6.34961C7.96484 6.61914 8.19922 6.86523 8.48633 6.86523C8.76172 6.86523 9.00195 6.63672 9.00195 6.32617Z"
+                                        fill="currentColor"></path>
+                                </svg>
+                            </span>
+                        </a>
+                    </li>
+                    <!-- li end  -->
+
+                    <!-- li start  -->
+                    <li class="flex items-stretch space-x-1">
+                        <a target="_blank" rel="noopener noreferrer"
+                            class="flex flex-1 items-center space-x-3 rounded-md px-2 py-1.5 text-sm font-medium  text-gray-700 dark:text-gray-200 sm:hover:bg-gray-200 sm:hover:text-gray-900 sm:dark:hover:bg-gray-700 sm:dark:hover:text-gray-200"
+                            href="https://x.com/tayyababbasdev">
+                            <span class="flex items-center justify-center w-4">
+                                <svg viewBox="0 0 16 14" xmlns="http://www.w3.org/2000/svg" width="16" height="14"
+                                    fill="currentColor">
+                                    <path
+                                        d="M14.3617 3.35401C14.3687 3.49999 14.3713 3.64777 14.3713 3.79376C14.3713 8.29039 11.0696 13.4737 5.03217 13.4737C3.17739 13.4737 1.45304 12.9105 0 11.9445C0.859457 12.0522 1.73097 11.9833 2.56473 11.7418C3.39849 11.5003 4.17814 11.0908 4.85913 10.5369C4.17428 10.5235 3.51059 10.2886 2.96085 9.86516C2.41112 9.44169 2.00282 8.85078 1.79304 8.17505C2.28527 8.27044 2.79186 8.25042 3.27565 8.11647C2.53271 7.96035 1.8647 7.54285 1.38482 6.9347C0.904951 6.32655 0.642734 5.56518 0.642609 4.77959V4.73724C1.09843 5.00001 1.60823 5.14614 2.12957 5.16347C1.4338 4.6828 0.941284 3.94507 0.752536 3.10088C0.563788 2.25669 0.693041 1.36968 1.11391 0.620882C1.93808 1.67201 2.96639 2.53173 4.13207 3.14418C5.29774 3.75663 6.5747 4.10813 7.88 4.17584C7.82353 3.92137 7.79523 3.66107 7.79565 3.39996C7.79565 2.9534 7.88054 2.51121 8.04548 2.09865C8.21041 1.68609 8.45215 1.31124 8.7569 0.995511C9.06165 0.679784 9.42344 0.429363 9.82159 0.258552C10.2197 0.0877414 10.6465 -0.00011384 11.0774 4.51813e-06C11.5265 -0.000754465 11.9709 0.0941183 12.3832 0.278738C12.7954 0.463357 13.1667 0.733786 13.4739 1.07325C14.2088 0.922489 14.9136 0.643368 15.5583 0.247815C15.3131 1.03559 14.8001 1.70424 14.1148 2.12937C14.7654 2.04944 15.4009 1.86901 16 1.5941C15.5599 2.27755 15.005 2.87363 14.3617 3.35401V3.35401Z">
+                                    </path>
+                                </svg>
+                            </span>
+                            <span class="flex-1">Twitter</span>
+                            <span
+                                class="flex items-center justify-center w-4 text-black text-opacity-40 dark:text-white"><svg
+                                    width="10" height="9" viewBox="0 0 10 9" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M9.00195 6.32617V0.824219C9.00195 0.490234 8.79102 0.267578 8.45117 0.267578L2.94922 0.279297C2.62109 0.279297 2.41016 0.519531 2.41016 0.794922C2.41016 1.07031 2.65039 1.30469 2.92578 1.30469H4.66602L7.45508 1.19922L6.39453 2.13672L1.16211 7.38086C1.05664 7.48633 0.998047 7.61523 0.998047 7.73828C0.998047 8.01367 1.24414 8.27734 1.53125 8.27734C1.66602 8.27734 1.78906 8.22461 1.89453 8.11914L7.13281 2.875L8.07617 1.81445L7.96484 4.48047V6.34961C7.96484 6.61914 8.19922 6.86523 8.48633 6.86523C8.76172 6.86523 9.00195 6.63672 9.00195 6.32617Z"
+                                        fill="currentColor"></path>
+                                </svg>
+                            </span>
+                        </a>
+                    </li>
+                    <!-- li start  -->
+
+                    <!-- li start  -->
+                    <li class="flex items-stretch space-x-1"><a target="_blank" rel="noopener noreferrer"
+                            class="flex flex-1 items-center space-x-3 rounded-md px-2 py-1.5 text-sm font-medium  text-gray-700 dark:text-gray-200 sm:hover:bg-gray-200 sm:hover:text-gray-900 sm:dark:hover:bg-gray-700 sm:dark:hover:text-gray-200"
+                            href="https://www.youtube.com/@tayyababbashaider">
+                            <span class="flex items-center justify-center w-4">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M0.734576 5.16761C0.805268 4.07928 1.68027 3.22636 2.76955 3.1724C4.34691 3.09425 6.60141 3 8.3001 3C9.99879 3 12.2533 3.09425 13.8306 3.1724C14.9199 3.22636 15.7949 4.07928 15.8656 5.16761C15.9333 6.21031 16.0001 7.49331 16.0001 8.5C16.0001 9.50669 15.9333 10.7897 15.8656 11.8324C15.7949 12.9207 14.9199 13.7736 13.8306 13.8276C12.2533 13.9058 9.99879 14 8.3001 14C6.60141 14 4.34691 13.9058 2.76955 13.8276C1.68027 13.7736 0.805268 12.9207 0.734576 11.8324C0.666848 10.7897 0.600098 9.50669 0.600098 8.5C0.600098 7.49331 0.666848 6.21031 0.734576 5.16761Z"
+                                        fill="currentColor"></path>
+                                    <path d="M6.6499 6.30005V10.7L11.0499 8.50005L6.6499 6.30005Z" fill="currentColor"
+                                        class="text-gray-50 dark:text-gray-900"></path>
+                                </svg>
+                            </span>
+                            <span class="flex-1">YouTube</span>
+                            <span
+                                class="flex items-center justify-center w-4 text-black text-opacity-40 dark:text-white">
+                                <svg width="10" height="9" viewBox="0 0 10 9" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M9.00195 6.32617V0.824219C9.00195 0.490234 8.79102 0.267578 8.45117 0.267578L2.94922 0.279297C2.62109 0.279297 2.41016 0.519531 2.41016 0.794922C2.41016 1.07031 2.65039 1.30469 2.92578 1.30469H4.66602L7.45508 1.19922L6.39453 2.13672L1.16211 7.38086C1.05664 7.48633 0.998047 7.61523 0.998047 7.73828C0.998047 8.01367 1.24414 8.27734 1.53125 8.27734C1.66602 8.27734 1.78906 8.22461 1.89453 8.11914L7.13281 2.875L8.07617 1.81445L7.96484 4.48047V6.34961C7.96484 6.61914 8.19922 6.86523 8.48633 6.86523C8.76172 6.86523 9.00195 6.63672 9.00195 6.32617Z"
+                                        fill="currentColor"></path>
+                                </svg>
+                            </span>
+                        </a>
+                    </li>
+                    <!-- li end  -->
+                </ul>
+            </div>
+        </nav>
+        <!-- nav end -->
+
+        <div class="flex flex-1">
+            <div class="flex w-full">
+                <div id="main" class="relative flex max-h-screen w-full flex-col overflow-y-auto bg-white dark:bg-black"
+                    data-cy="home-intro">
+
+                    <div class="filter-blur sticky top-0 z-10 flex flex-col justify-center px-3 py-2 dark:border-b dark:border-gray-900"
+                        style="background: rgba(50, 50, 50, 0); box-shadow: rgba(0, 0, 0, 0) 0px 1px 3px; min-height: 48px;">
+                        <div class="flex items-center justify-between w-full">
+                            <!-- Left: Burger Menu (hidden on lg+) -->
+                            <span id="burger-menu"
+                                class="flex items-center justify-center p-2 rounded-md cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-800 lg:hidden">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="text-primary">
+                                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                                </svg>
+                            </span>
+
+                            <!-- Right: Resume Button -->
+                            <div class="flex-1 flex justify-end">
+                                <button id="resume-btn"
+                                    class="px-4 py-2 rounded-lg font-semibold hover:bg-primary/80 transition dark:text-gray-900 bg-gray-200 dark:bg-gray-200">
+                                    Download CV
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- body content start-->
+
+                    <div class="mx-auto w-full max-w-3xl px-4 py-12 pb-10 md:px-8 dark:text-gray-400">
+                        <div class="pb-24 space-y-8 md:space-y-16">
+
+                            <div class="grid items-start grid-cols-1 gap-6 grid-cols-12">
+                                <!-- <h4 class="col-span-2 pt-8 text-lg font-extrabold text-black dark:text-white md:pt-0 md:text-right md:text-base md:font-normal md:text-opacity-40"></h4> -->
+                                <div class="col-span-10">
+                                    <div class="prose w-full text-primary">
+                                        <div
+                                            style="background-image: url('assets/images/tayyab/TayyabAbbasCover.jpg'); background-size: cover; background-position: center; padding: 20px; color: white;">
+                                            <p style="background-color: rgba(0, 0, 0, 0.7);">
+                                                <span id="typed-intro"></span>
+                                            </p>
+                                        </div>
+                                        <p>
+                                            Experienced in providing custom solutions, skilled with cloud, serverless,
+                                            AWS's multiple services and OTT, building environments from the scratch up
+                                            to <b>production</b> level.
+                                        </p>
+                                        <p>
+                                            I'm currently building
+                                            an app that brings together learning experience, management, and e-commerce
+                                            along with multi vendor support at <a target="_blank"
+                                                rel="noopener noreferrer" href="https://itroadway.com">IT Roadway</a>.
+                                        </p>
+
+                                        <p>As a experienced software engineer, I have a proven track record of
+                                            delivering high-quality solutions to clients. You can find my professional
+                                            profile on <a target="_blank" rel="noopener noreferrer"
+                                                href="https://www.linkedin.com/in/tayyababbashaider/">LinkedIn</a> and
+                                            explore my services on <a target="_blank" rel="noopener noreferrer"
+                                                href="https://www.fiverr.com/s/NNaQgo8"
+                                                class="!text-orange-500">Fiverr</a>, <a target="_blank"
+                                                rel="noopener noreferrer"
+                                                href="https://www.upwork.com/freelancers/~0142c1fdc1dd525e06"
+                                                class="!text-purple-600">Upwork</a> and <a target="_blank"
+                                                rel="noopener noreferrer" href="http://pph.me/tayyababbashaider"
+                                                class="!text-orange-500">PeoplePerHour</a> for any project proposals.
+                                        </p>
+
+                                        <p>After graduation, I spent 1 year as a Software Engineer at <a target="_blank"
+                                                rel="noopener noreferrer"
+                                                href="https://www.linkedin.com/company/shark-innovation-labs/posts/?feedView=all"
+                                                class="!text-orange-500">Shark Innovation Labs</a>, a child company of
+                                            <a target="_blank" rel="noopener noreferrer"
+                                                href="https://www.alsharqi.co/">Al Sharqi</a>, working with a
+                                            Dubai-based client. This experience marked a significant milestone in my
+                                            career, leveraging my Vue Js and React Js skills.
+                                        </p>
+
+                                        <p>Before Shark Innovation Labs, I completed an internship as a Trainee and
+                                            Associate Software Engineer at <a target="_blank" rel="noopener noreferrer"
+                                                href="https://www.linkedin.com/company/mettlesol/posts/?feedView=all"
+                                                class="!text-orange-500">Mettlesol</a>, where I worked on various
+                                            projects, including an online website for the company using React.js and
+                                            Firebase. Additionally, I participated in an Apprenticeship at <a
+                                                target="_blank" rel="noopener noreferrer"
+                                                href="https://www.linkedin.com/company/zauq-group/posts/?feedView=all">Zauq
+                                                Group</a>, contributing to an RFID-based Grocery Website project as part
+                                            of my university's Final Year Project.</p>
+
+                                        <p>I also co-host the multiple <a target="_blank" rel="noopener noreferrer"
+                                                href="#" class="!text-orange-500">training</a> sessions about software
+                                            development.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="grid items-start grid-cols-1 gap-6 grid-cols-12">
+                                <div
+                                    class="col-span-2 pt-8 text-lg font-extrabold text-black dark:text-white md:pt-0 md:text-right md:text-base md:font-normal md:text-opacity-40">
+                                </div>
+                                <div class="col-span-10">
+                                    <div class="grid md:grid-cols-3 gap-5">
+
+                                        <div class="flex flex-col border border-gray-100 text-sm dark:border-gray-900 rounded-lg lg:border-none dark:bg-gray-900 dark:border-0"
+                                            style="border: 0.5px solid #ccc">
+                                            <div class="mb-5 flex items-center justify-between gap-2 w-full px-10"
+                                                style="padding: 10px 15px;">
+                                                <div class="flex-1 text-black dark:text-white">
+                                                    <span class="flex items-center space-x-1">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                            viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                            stroke-width="2" stroke-linecap="round"
+                                                            stroke-linejoin="round">
+                                                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z">
+                                                            </path>
+                                                            <circle cx="12" cy="10" r="3"></circle>
+                                                        </svg>
+                                                        <span>Lhr, PK (GMT+5)</span>
+                                                    </span>
+                                                </div>
+                                                <div></div>
+                                            </div>
+                                            <div style="border-color: #a3a3a378" class="border m-0"></div>
+                                            <div style="padding: 15px;" class="text-center">
+
+                                                <div class="clock">
+                                                    <div>
+                                                    </div>
+                                                    <div class="dot"></div>
+                                                    <div>
+                                                        <div class="hour-hand"></div>
+                                                        <div class="minute-hand"></div>
+                                                        <div class="second-hand"></div>
+                                                    </div>
+                                                    <div>
+                                                        <span class="h3">3</span>
+                                                        <span class="h6">6</span>
+                                                        <span class="h9">9</span>
+                                                        <span class="h12">12</span>
+                                                    </div>
+                                                    <div class="diallines"></div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="flex flex-col border border-gray-100 text-sm dark:border-gray-900 rounded-lg lg:border-none dark:bg-gray-900 dark:border-0"
+                                            style="border: 0.5px solid #ccc">
+                                            <div class="mb-5 flex items-center justify-between gap-2 w-full px-10"
+                                                style="padding: 10px 15px;">
+                                                <div class="flex-1 text-black dark:text-white uppercase">Mode</div>
+                                                <div class="flex gap-2 items-center">
+                                                    <!-- <span class="w-3 h-3 rounded-full block" style="background: rgb(255, 29, 29);"></span> -->
+                                                    <!-- <span class="w-3 h-3 rounded-full block" style="background: rgb(6, 164, 85);"></span> -->
+                                                    <span class="w-3 h-3 rounded-full block"
+                                                        style="background: rgb(255, 194, 29);"></span>
+                                                </div>
+                                            </div>
+                                            <div style="border-color: #a3a3a378" class="border m-0"></div>
+                                            <div style="padding: 15px;">
+                                                <p class="text-black dark:text-white text-md">- Working at <b>AI</b> use
+                                                    cases.</p>
+                                                <p style="padding-top: 5px;" class="text-black dark:text-white text-md">
+                                                    - Developing laravel modified <b>boilerplate</b>.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="flex flex-col border border-gray-100 text-sm dark:border-gray-900 rounded-lg lg:border-none dark:bg-gray-900 dark:border-0"
+                                            style="border: 0.5px solid #ccc">
+                                            <div class="mb-5 flex items-center justify-between gap-2 w-full px-10"
+                                                style="padding: 10px 15px;">
+                                                <div class="flex-1 text-black dark:text-white uppercase">Years pro</div>
+                                                <div></div>
+                                            </div>
+                                            <div style="border-color: #a3a3a378" class="border m-0"></div>
+                                            <div style="padding: 15px;" class="flex items-center justify-center">
+                                                <div class="text-black dark:text-white font-bold"
+                                                    style="line-height: normal; font-size: 80px;"> 4+</div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="grid items-start grid-cols-1 gap-6 md:grid-cols-12">
+                                <h4
+                                    class="col-span-2 pt-8 text-lg font-extrabold text-black dark:text-white md:pt-0 text-left md:text-base md:font-normal md:text-opacity-40">
+                                    Online</h4>
+                                <div class="col-span-10">
+                                    <div class="flex flex-col gap-5 lg:gap-3">
+                                        <a target="_blank" rel="noopener noreferrer"
+                                            href="https://github.com/tayyababbashaider"
+                                            class="flex sm:items-center flex-col sm:flex-row gap-0.5 sm:gap-4 group">
+                                            <strong
+                                                class="line-clamp-2 font-medium text-gray-1000 group-hover:text-blue-600 group-hover:underline dark:text-gray-100 dark:group-hover:text-blue-500">GitHub</strong>
+                                            <span
+                                                class="hidden sm:flex flex-1 border-t border-gray-300 border-dashed shrink dark:border-gray-800"></span>
+                                            <span class="flex-none text-tertiary">Follow</span>
+                                        </a>
+                                        <a target="_blank" rel="noopener noreferrer"
+                                            href="https://www.linkedin.com/in/tayyababbashaider"
+                                            class="flex sm:items-center flex-col sm:flex-row gap-0.5 sm:gap-4 group">
+                                            <strong
+                                                class="line-clamp-2 font-medium text-gray-1000 group-hover:text-blue-600 group-hover:underline dark:text-gray-100 dark:group-hover:text-blue-500">LinkedIn</strong>
+                                            <span
+                                                class="hidden sm:flex flex-1 border-t border-gray-300 border-dashed shrink dark:border-gray-800"></span>
+                                            <span class="flex-none text-tertiary">Follow</span>
+                                        </a>
+                                        <a target="_blank" rel="noopener noreferrer"
+                                            href="https://stackoverflow.com/users/17666468/tayyababbashaider"
+                                            class="flex sm:items-center flex-col sm:flex-row gap-0.5 sm:gap-4 group">
+                                            <strong
+                                                class="line-clamp-2 font-medium text-gray-1000 group-hover:text-blue-600 group-hover:underline dark:text-gray-100 dark:group-hover:text-blue-500">StackOverflow</strong>
+                                            <span
+                                                class="hidden sm:flex flex-1 border-t border-gray-300 border-dashed shrink dark:border-gray-800"></span>
+                                            <span class="flex-none text-tertiary">Follow</span>
+                                        </a>
+                                        <a target="_blank" rel="noopener noreferrer"
+                                            href="https://www.youtube.com/@tayyababbashaider"
+                                            class="flex sm:items-center flex-col sm:flex-row gap-0.5 sm:gap-4 group">
+                                            <strong
+                                                class="line-clamp-2 font-medium text-gray-1000 group-hover:text-blue-600 group-hover:underline dark:text-gray-100 dark:group-hover:text-blue-500">YouTube</strong>
+                                            <span
+                                                class="hidden sm:flex flex-1 border-t border-gray-300 border-dashed shrink dark:border-gray-800"></span>
+                                            <span class="flex-none text-tertiary">Subscribe</span>
+                                        </a>
+                                        <a target="_blank" rel="noopener noreferrer" href="https://x.com/tayyababbasdev"
+                                            class="flex sm:items-center flex-col sm:flex-row gap-0.5 sm:gap-4 group">
+                                            <strong
+                                                class="line-clamp-2 font-medium text-gray-1000 group-hover:text-blue-600 group-hover:underline dark:text-gray-100 dark:group-hover:text-blue-500">Twitter</strong>
+                                            <span
+                                                class="hidden sm:flex flex-1 border-t border-gray-300 border-dashed shrink dark:border-gray-800"></span>
+                                            <span class="flex-none text-tertiary">Follow</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="grid items-start grid-cols-1 gap-6 md:grid-cols-12">
+                                <h4
+                                    class="col-span-2 pt-8 text-lg font-extrabold text-black dark:text-white md:pt-0 text-left md:text-base md:font-normal md:text-opacity-40">
+                                    Work</h4>
+                                <div class="col-span-10">
+                                    <div class="flex flex-col space-y-3">
+                                        <a target="_blank" rel="noopener noreferrer" href="https://itroadway.com"
+                                            class="flex sm:items-center flex-col sm:flex-row gap-0.5 sm:gap-4 group">
+                                            <strong
+                                                class="line-clamp-2 font-medium text-gray-1000 group-hover:text-blue-600 group-hover:underline dark:text-gray-100 dark:group-hover:text-blue-500">IT
+                                                Roadway && 786 Media Group
+                                            </strong>
+                                            <span
+                                                class="hidden sm:flex flex-1 border-t border-gray-300 border-dashed shrink dark:border-gray-800"></span>
+                                            <span class="flex-none text-tertiary">Senior Software Engineer</span>
+                                            <span class="flex-none font-mono text-quaternary">2023—&nbsp;&nbsp;</span>
+                                        </a>
+                                        <a target="_blank" rel="noopener noreferrer"
+                                            href="http://pph.me/tayyababbashaider"
+                                            class="flex sm:items-center flex-col sm:flex-row gap-0.5 sm:gap-4 group">
+                                            <strong
+                                                class="line-clamp-2 font-medium text-gray-1000 group-hover:text-blue-600 group-hover:underline dark:text-gray-100 dark:group-hover:text-blue-500">Freelancing</strong>
+                                            <span
+                                                class="hidden sm:flex flex-1 border-t border-gray-300 border-dashed shrink dark:border-gray-800"></span>
+                                            <span class="flex-none text-tertiary">Sr. Software Engineer</span><span
+                                                class="flex-none font-mono text-quaternary">2022—&nbsp;&nbsp;</span>
+                                        </a>
+                                        <a target="_blank" rel="noopener noreferrer" href="https://www.alsharqi.co/"
+                                            class="flex sm:items-center flex-col sm:flex-row gap-0.5 sm:gap-4 group">
+                                            <strong
+                                                class="line-clamp-2 font-medium text-gray-1000 group-hover:text-blue-600 group-hover:underline dark:text-gray-100 dark:group-hover:text-blue-500">AlSharqi
+                                                && Shark Innovation Labs</strong>
+                                            <span
+                                                class="hidden sm:flex flex-1 border-t border-gray-300 border-dashed shrink dark:border-gray-800"></span>
+                                            <span class="flex-none text-tertiary">Software Engineer</span><span
+                                                class="flex-none font-mono text-quaternary">2022—23</span>
+                                        </a>
+                                        <a target="_blank" rel="noopener noreferrer"
+                                            href="https://www.linkedin.com/company/mettlesol/posts/?feedView=all"
+                                            class="flex sm:items-center flex-col sm:flex-row gap-0.5 sm:gap-4 group">
+                                            <strong
+                                                class="line-clamp-2 font-medium text-gray-1000 group-hover:text-blue-600 group-hover:underline dark:text-gray-100 dark:group-hover:text-blue-500">MettleSol</strong>
+                                            <span
+                                                class="hidden sm:flex flex-1 border-t border-gray-300 border-dashed shrink dark:border-gray-800"></span>
+                                            <span class="flex-none text-tertiary">Ass. Software Engineer</span><span
+                                                class="flex-none font-mono text-quaternary">2021—22</span>
+                                        </a>
+                                        <a target="_blank" rel="noopener noreferrer"
+                                            href="https://www.linkedin.com/company/zauq-group/posts/?feedView=all"
+                                            class="flex sm:items-center flex-col sm:flex-row gap-0.5 sm:gap-4 group">
+                                            <strong
+                                                class="line-clamp-2 font-medium text-gray-1000 group-hover:text-blue-600 group-hover:underline dark:text-gray-100 dark:group-hover:text-blue-500">Zauq
+                                                Group
+                                            </strong>
+                                            <span
+                                                class="hidden sm:flex flex-1 border-t border-gray-300 border-dashed shrink dark:border-gray-800"></span>
+                                            <span class="flex-none text-tertiary">Apprenticeship</span><span
+                                                class="flex-none font-mono text-quaternary">2021—22</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="grid items-start grid-cols-1 gap-6 md:grid-cols-12">
+                                <h4
+                                    class="col-span-2 pt-8 text-lg font-extrabold text-black dark:text-white md:pt-0 text-left md:text-base md:font-normal md:text-opacity-40">
+                                    Speaking</h4>
+                                <div class="col-span-10">
+                                    <div class="flex flex-col space-y-3">
+                                        <a target="_blank" rel="noopener noreferrer" href="#"
+                                            class="flex sm:items-center flex-col sm:flex-row gap-0.5 sm:gap-4 group">
+                                            <strong
+                                                class="line-clamp-2 font-medium text-gray-1000 group-hover:text-blue-600 group-hover:underline dark:text-gray-100 dark:group-hover:text-blue-500">Mind
+                                                map technique</strong>
+                                            <span
+                                                class="hidden sm:flex flex-1 border-t border-gray-300 border-dashed shrink dark:border-gray-800"></span>
+                                            <span class="flex-none font-mono text-quaternary">Jan '25</span>
+                                        </a>
+                                        <a target="_blank" rel="noopener noreferrer" href="#"
+                                            class="flex sm:items-center flex-col sm:flex-row gap-0.5 sm:gap-4 group">
+                                            <strong
+                                                class="line-clamp-2 font-medium text-gray-1000 group-hover:text-blue-600 group-hover:underline dark:text-gray-100 dark:group-hover:text-blue-500">Software
+                                                design patterns</strong>
+                                            <span
+                                                class="hidden sm:flex flex-1 border-t border-gray-300 border-dashed shrink dark:border-gray-800"></span>
+                                            <span class="flex-none font-mono text-quaternary">Aug '24</span>
+                                        </a>
+                                        <a target="_blank" rel="noopener noreferrer" href="#"
+                                            class="flex sm:items-center flex-col sm:flex-row gap-0.5 sm:gap-4 group">
+                                            <strong
+                                                class="line-clamp-2 font-medium text-gray-1000 group-hover:text-blue-600 group-hover:underline dark:text-gray-100 dark:group-hover:text-blue-500">KISS
+                                                principle in programming</strong>
+                                            <span
+                                                class="hidden sm:flex flex-1 border-t border-gray-300 border-dashed shrink dark:border-gray-800"></span>
+                                            <span class="flex-none font-mono text-quaternary">Jan '24</span>
+                                        </a>
+                                        <a target="_blank" rel="noopener noreferrer" href="#"
+                                            class="flex sm:items-center flex-col sm:flex-row gap-0.5 sm:gap-4 group">
+                                            <strong
+                                                class="line-clamp-2 font-medium text-gray-1000 group-hover:text-blue-600 group-hover:underline dark:text-gray-100 dark:group-hover:text-blue-500">Systems
+                                                development life cycle</strong>
+                                            <span
+                                                class="hidden sm:flex flex-1 border-t border-gray-300 border-dashed shrink dark:border-gray-800"></span>
+                                            <span class="flex-none font-mono text-quaternary">Oct '23</span>
+                                        </a>
+                                        <a target="_blank" rel="noopener noreferrer" href="#"
+                                            class="flex sm:items-center flex-col sm:flex-row gap-0.5 sm:gap-4 group">
+                                            <strong
+                                                class="line-clamp-2 font-medium text-gray-1000 group-hover:text-blue-600 group-hover:underline dark:text-gray-100 dark:group-hover:text-blue-500">AWS
+                                                lambda@edge</strong>
+                                            <span
+                                                class="hidden sm:flex flex-1 border-t border-gray-300 border-dashed shrink dark:border-gray-800"></span>
+                                            <span class="flex-none font-mono text-quaternary">Mar '23</span>
+                                        </a>
+                                        <a target="_blank" rel="noopener noreferrer" href="#"
+                                            class="flex sm:items-center flex-col sm:flex-row gap-0.5 sm:gap-4 group">
+                                            <strong
+                                                class="line-clamp-2 font-medium text-gray-1000 group-hover:text-blue-600 group-hover:underline dark:text-gray-100 dark:group-hover:text-blue-500">Building
+                                                applications with serverless architectures</strong>
+                                            <span
+                                                class="hidden sm:flex flex-1 border-t border-gray-300 border-dashed shrink dark:border-gray-800"></span>
+                                            <span class="flex-none font-mono text-quaternary">Feb '23</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Stack -->
+                            <div class="grid items-start grid-cols-1 gap-6 md:grid-cols-12">
+                                <h4
+                                    class="col-span-2 pt-8 text-lg font-extrabold text-black dark:text-white md:pt-0 text-left md:text-base md:font-normal md:text-opacity-40">
+                                    Stack</h4>
+                                <div class="col-span-10">
+                                    <!-- Programming Languages -->
+                                    <div class="flex flex-col space-y-3 mb-1">
+                                        <div rel="noopener noreferrer" href="#"
+                                            class="flex sm:items-center flex-col sm:flex-row gap-0.5 sm:gap-4 group">
+                                            <span class="flex-none text-gray-1000  dark:text-gray-100 ">Programming
+                                                Languages</span>
+                                            <span
+                                                class="hidden sm:flex flex-1 border-t border-gray-300 border-dashed shrink dark:border-gray-800"></span>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-wrap mb-2">
+                                        <span
+                                            class="flex items-center rounded-full px-3 py-1 text-xs font-semibold leading-5 mr-2 mt-1 dark:text-gray-900 bg-gray-200 dark:bg-gray-200">
+                                            PHP </span>
+                                        <span
+                                            class="flex items-center rounded-full px-3 py-1 text-xs font-semibold leading-5 mr-2 mt-1 dark:text-gray-900 bg-gray-200 dark:bg-gray-200">
+                                            JavaScript </span>
+                                        <span
+                                            class="flex items-center rounded-full px-3 py-1 text-xs font-semibold leading-5 mr-2 mt-1 dark:text-gray-900 bg-gray-200 dark:bg-gray-200">
+                                            Elixir </span>
+                                        <span
+                                            class="flex items-center rounded-full px-3 py-1 text-xs font-semibold leading-5 mr-2 mt-1 dark:text-gray-900 bg-gray-200 dark:bg-gray-200">
+                                            Python </span>
+                                        <span
+                                            class="flex items-center rounded-full px-3 py-1 text-xs font-semibold leading-5 mr-2 mt-1 dark:text-gray-900 bg-gray-200 dark:bg-gray-200">
+                                            HTML </span>
+                                        <span
+                                            class="flex items-center rounded-full px-3 py-1 text-xs font-semibold leading-5 mr-2 mt-1 dark:text-gray-900 bg-gray-200 dark:bg-gray-200">
+                                            CSS </span>
+                                        <span
+                                            class="flex items-center rounded-full px-3 py-1 text-xs font-semibold leading-5 mr-2 mt-1 dark:text-gray-900 bg-gray-200 dark:bg-gray-200">
+                                            Liquid </span>
+                                        <span
+                                            class="flex items-center rounded-full px-3 py-1 text-xs font-semibold leading-5 mr-2 mt-1 dark:text-gray-900 bg-gray-200 dark:bg-gray-200">
+                                            GraphQL </span>
+                                    </div>
+
+                                    <!-- Libraries & Frameworks -->
+                                    <div class="flex flex-col space-y-3 mt-2 mb-1">
+                                        <div rel="noopener noreferrer" href="#"
+                                            class="flex sm:items-center flex-col sm:flex-row gap-0.5 sm:gap-4 group">
+                                            <span class="flex-none text-gray-1000  dark:text-gray-100 ">Libraries &
+                                                Frameworks</span>
+                                            <span
+                                                class="hidden sm:flex flex-1 border-t border-gray-300 border-dashed shrink dark:border-gray-800"></span>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-wrap mb-2">
+                                        <span
+                                            class="flex items-center rounded-full px-3 py-1 text-xs font-semibold leading-5 mr-2 mt-1 dark:text-gray-900 bg-gray-200 dark:bg-gray-200">
+                                            Laravel </span>
+                                        <span
+                                            class="flex items-center rounded-full px-3 py-1 text-xs font-semibold leading-5 mr-2 mt-1 dark:text-gray-900 bg-gray-200 dark:bg-gray-200">
+                                            Next </span>
+                                        <span
+                                            class="flex items-center rounded-full px-3 py-1 text-xs font-semibold leading-5 mr-2 mt-1 dark:text-gray-900 bg-gray-200 dark:bg-gray-200">
+                                            React </span>
+                                        <span
+                                            class="flex items-center rounded-full px-3 py-1 text-xs font-semibold leading-5 mr-2 mt-1 dark:text-gray-900 bg-gray-200 dark:bg-gray-200">
+                                            Vue </span>
+                                        <span
+                                            class="flex items-center rounded-full px-3 py-1 text-xs font-semibold leading-5 mr-2 mt-1 dark:text-gray-900 bg-gray-200 dark:bg-gray-200">
+                                            Phoenix </span>
+                                        <span
+                                            class="flex items-center rounded-full px-3 py-1 text-xs font-semibold leading-5 mr-2 mt-1 dark:text-gray-900 bg-gray-200 dark:bg-gray-200">
+                                            Meteor </span>
+                                        <span
+                                            class="flex items-center rounded-full px-3 py-1 text-xs font-semibold leading-5 mr-2 mt-1 dark:text-gray-900 bg-gray-200 dark:bg-gray-200">
+                                            Node </span>
+                                        <span
+                                            class="flex items-center rounded-full px-3 py-1 text-xs font-semibold leading-5 mr-2 mt-1 dark:text-gray-900 bg-gray-200 dark:bg-gray-200">
+                                            Gatsby </span>
+                                        <span
+                                            class="flex items-center rounded-full px-3 py-1 text-xs font-semibold leading-5 mr-2 mt-1 dark:text-gray-900 bg-gray-200 dark:bg-gray-200">
+                                            Shopify </span>
+                                        <span
+                                            class="flex items-center rounded-full px-3 py-1 text-xs font-semibold leading-5 mr-2 mt-1 dark:text-gray-900 bg-gray-200 dark:bg-gray-200">
+                                            Firebase </span>
+                                        <span
+                                            class="flex items-center rounded-full px-3 py-1 text-xs font-semibold leading-5 mr-2 mt-1 dark:text-gray-900 bg-gray-200 dark:bg-gray-200">
+                                            Stripe </span>
+                                        <span
+                                            class="flex items-center rounded-full px-3 py-1 text-xs font-semibold leading-5 mr-2 mt-1 dark:text-gray-900 bg-gray-200 dark:bg-gray-200">
+                                            Serverless </span>
+                                        <span
+                                            class="flex items-center rounded-full px-3 py-1 text-xs font-semibold leading-5 mr-2 mt-1 dark:text-gray-900 bg-gray-200 dark:bg-gray-200">
+                                            Test Driven Development </span>
+                                    </div>
+
+                                    <!-- Cloud -->
+                                    <div class="flex flex-col space-y-3 mt-2 mb-1">
+                                        <div rel="noopener noreferrer" href="#"
+                                            class="flex sm:items-center flex-col sm:flex-row gap-0.5 sm:gap-4 group">
+                                            <span class="flex-none text-gray-1000  dark:text-gray-100 ">Hostings &
+                                                Clouds</span>
+                                            <span
+                                                class="hidden sm:flex flex-1 border-t border-gray-300 border-dashed shrink dark:border-gray-800"></span>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-wrap mb-2">
+                                        <span
+                                            class="flex items-center rounded-full px-3 py-1 text-xs font-semibold leading-5 mr-2 mt-1 dark:text-gray-900 bg-gray-200 dark:bg-gray-200">
+                                            AWS </span>
+                                        <span
+                                            class="flex items-center rounded-full px-3 py-1 text-xs font-semibold leading-5 mr-2 mt-1 dark:text-gray-900 bg-gray-200 dark:bg-gray-200">
+                                            Google </span>
+                                        <span
+                                            class="flex items-center rounded-full px-3 py-1 text-xs font-semibold leading-5 mr-2 mt-1 dark:text-gray-900 bg-gray-200 dark:bg-gray-200">
+                                            Alibaba </span>
+                                        <span
+                                            class="flex items-center rounded-full px-3 py-1 text-xs font-semibold leading-5 mr-2 mt-1 dark:text-gray-900 bg-gray-200 dark:bg-gray-200">
+                                            Serverless </span>
+                                        <span
+                                            class="flex items-center rounded-full px-3 py-1 text-xs font-semibold leading-5 mr-2 mt-1 dark:text-gray-900 bg-gray-200 dark:bg-gray-200">
+                                            Lambda@edge </span>
+                                        <span
+                                            class="flex items-center rounded-full px-3 py-1 text-xs font-semibold leading-5 mr-2 mt-1 dark:text-gray-900 bg-gray-200 dark:bg-gray-200">
+                                            Netlify </span>
+                                        <span
+                                            class="flex items-center rounded-full px-3 py-1 text-xs font-semibold leading-5 mr-2 mt-1 dark:text-gray-900 bg-gray-200 dark:bg-gray-200">
+                                            Vercel </span>
+                                        <span
+                                            class="flex items-center rounded-full px-3 py-1 text-xs font-semibold leading-5 mr-2 mt-1 dark:text-gray-900 bg-gray-200 dark:bg-gray-200">
+                                            Heroku </span>
+                                        <span
+                                            class="flex items-center rounded-full px-3 py-1 text-xs font-semibold leading-5 mr-2 mt-1 dark:text-gray-900 bg-gray-200 dark:bg-gray-200">
+                                            DigitalOcean </span>
+
+                                    </div>
+
+                                    <!-- OTT -->
+                                    <div class="flex flex-col space-y-3 mt-2 mb-1">
+                                        <div rel="noopener noreferrer" href="#"
+                                            class="flex sm:items-center flex-col sm:flex-row gap-0.5 sm:gap-4 group">
+                                            <span class="flex-none text-gray-1000  dark:text-gray-100 ">OTT</span>
+                                            <span
+                                                class="hidden sm:flex flex-1 border-t border-gray-300 border-dashed shrink dark:border-gray-800"></span>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-wrap mb-2">
+                                        <span title="HTTP Live Streaming Protocol"
+                                            class="flex items-center rounded-full px-3 py-1 text-xs font-semibold leading-5 mr-2 mt-1 dark:text-gray-900 bg-gray-200 dark:bg-gray-200">HLS</span>
+                                        <span title="Dynamic Adaptive Streaming over HTTP Protocol"
+                                            class="flex items-center rounded-full px-3 py-1 text-xs font-semibold leading-5 mr-2 mt-1 dark:text-gray-900 bg-gray-200 dark:bg-gray-200">DASH</span>
+                                        <span title="Digital Rights Management"
+                                            class="flex items-center rounded-l-full px-3 py-1 text-xs font-semibold leading-5 mr-1 mt-1 dark:text-gray-900 bg-gray-200 dark:bg-gray-200">DRM</span>
+                                        <span title="Digital Rights Management"
+                                            class="flex items-center px-3 py-1 text-xs font-semibold leading-5 mr-1 mt-1 dark:text-gray-900 bg-gray-200 dark:bg-gray-200">Widevine</span>
+                                        <span title="Digital Rights Management"
+                                            class="flex items-center px-3 py-1 text-xs font-semibold leading-5 mr-1 mt-1 dark:text-gray-900 bg-gray-200 dark:bg-gray-200">PlayReady</span>
+                                        <span title="Digital Rights Management"
+                                            class="flex items-center rounded-r-full px-3 py-1 text-xs font-semibold leading-5 mr-2 mt-1 dark:text-gray-900 bg-gray-200 dark:bg-gray-200">FairPlay</span>
+                                        <span
+                                            class="flex items-center rounded-full px-3 py-1 text-xs font-semibold leading-5 mr-2 mt-1 dark:text-gray-900 bg-gray-200 dark:bg-gray-200">Media
+                                            Servers</span>
+                                        <!--Media Servers :Wowza, Nginx, Red5 -->
+                                        <span title="Content Delivery Networks"
+                                            class="flex items-center rounded-l-full px-3 py-1 text-xs font-semibold leading-5 mr-1 mt-1 dark:text-gray-900 bg-gray-200 dark:bg-gray-200">CDNs</span>
+                                        <span title="Content Delivery Networks"
+                                            class="flex items-center px-3 py-1 text-xs font-semibold leading-5 mr-1 mt-1 dark:text-gray-900 bg-gray-200 dark:bg-gray-200">Akamai</span>
+                                        <span title="Content Delivery Networks"
+                                            class="flex items-center px-3 py-1 text-xs font-semibold leading-5 mr-1 mt-1 dark:text-gray-900 bg-gray-200 dark:bg-gray-200">Cloudflare</span>
+                                        <span title="Content Delivery Networks"
+                                            class="flex items-center rounded-r-full px-3 py-1 text-xs font-semibold leading-5 mr-2 mt-1 dark:text-gray-900 bg-gray-200 dark:bg-gray-200">Amazon
+                                            CloudFront</span>
+                                    </div>
+
+                                    <!-- Server -->
+                                    <div class="flex flex-col space-y-3 mt-2 mb-1">
+                                        <div rel="noopener noreferrer" href="#"
+                                            class="flex sm:items-center flex-col sm:flex-row gap-0.5 sm:gap-4 group">
+                                            <span class="flex-none text-gray-1000  dark:text-gray-100 ">Servers</span>
+                                            <span
+                                                class="hidden sm:flex flex-1 border-t border-gray-300 border-dashed shrink dark:border-gray-800"></span>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-wrap mb-2">
+                                        <span
+                                            class="flex items-center rounded-full px-3 py-1 text-xs font-semibold leading-5 mr-2 mt-1 dark:text-gray-900 bg-gray-200 dark:bg-gray-200">
+                                            Nginx </span>
+                                        <span
+                                            class="flex items-center rounded-full px-3 py-1 text-xs font-semibold leading-5 mr-2 mt-1 dark:text-gray-900 bg-gray-200 dark:bg-gray-200">
+                                            Apache </span>
+                                        <span
+                                            class="flex items-center rounded-full px-3 py-1 text-xs font-semibold leading-5 mr-2 mt-1 dark:text-gray-900 bg-gray-200 dark:bg-gray-200">
+                                            LiteSpeed </span>
+                                    </div>
+
+                                    <!-- DB -->
+                                    <div class="flex flex-col space-y-3 mt-2 mb-1">
+                                        <div rel="noopener noreferrer" href="#"
+                                            class="flex sm:items-center flex-col sm:flex-row gap-0.5 sm:gap-4 group">
+                                            <span class="flex-none text-gray-1000  dark:text-gray-100 ">Databases</span>
+                                            <span
+                                                class="hidden sm:flex flex-1 border-t border-gray-300 border-dashed shrink dark:border-gray-800"></span>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-wrap mb-2">
+                                        <span
+                                            class="flex items-center rounded-full px-3 py-1 text-xs font-semibold leading-5 mr-2 mt-1 dark:text-gray-900 bg-gray-200 dark:bg-gray-200">
+                                            MySQL </span>
+                                        <span
+                                            class="flex items-center rounded-full px-3 py-1 text-xs font-semibold leading-5 mr-2 mt-1 dark:text-gray-900 bg-gray-200 dark:bg-gray-200">
+                                            PostgreSQL </span>
+                                        <span
+                                            class="flex items-center rounded-full px-3 py-1 text-xs font-semibold leading-5 mr-2 mt-1 dark:text-gray-900 bg-gray-200 dark:bg-gray-200">
+                                            MongoDB </span>
+                                    </div>
+
+                                    <!-- Tools & Platforms -->
+                                    <div class="flex flex-col space-y-3 mt-2 mb-1">
+                                        <div rel="noopener noreferrer" href="#"
+                                            class="flex sm:items-center flex-col sm:flex-row gap-0.5 sm:gap-4 group">
+                                            <span class="flex-none text-gray-1000  dark:text-gray-100 ">Tools &
+                                                Platforms</span>
+                                            <span
+                                                class="hidden sm:flex flex-1 border-t border-gray-300 border-dashed shrink dark:border-gray-800"></span>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-wrap mb-2">
+                                        <span
+                                            class="flex items-center rounded-full px-3 py-1 text-xs font-semibold leading-5 mr-2 mt-1 dark:text-gray-900 bg-gray-200 dark:bg-gray-200">
+                                            Docker </span>
+                                        <span
+                                            class="flex items-center rounded-full px-3 py-1 text-xs font-semibold leading-5 mr-2 mt-1 dark:text-gray-900 bg-gray-200 dark:bg-gray-200">
+                                            SSH </span>
+                                        <span
+                                            class="flex items-center rounded-full px-3 py-1 text-xs font-semibold leading-5 mr-2 mt-1 dark:text-gray-900 bg-gray-200 dark:bg-gray-200">
+                                            Git </span>
+                                        <span
+                                            class="flex items-center rounded-full px-3 py-1 text-xs font-semibold leading-5 mr-2 mt-1 dark:text-gray-900 bg-gray-200 dark:bg-gray-200">
+                                            GitHub </span>
+                                        <span
+                                            class="flex items-center rounded-full px-3 py-1 text-xs font-semibold leading-5 mr-2 mt-1 dark:text-gray-900 bg-gray-200 dark:bg-gray-200">
+                                            TablePlus </span>
+                                        <span
+                                            class="flex items-center rounded-full px-3 py-1 text-xs font-semibold leading-5 mr-2 mt-1 dark:text-gray-900 bg-gray-200 dark:bg-gray-200">
+                                            Jira </span>
+                                        <span
+                                            class="flex items-center rounded-full px-3 py-1 text-xs font-semibold leading-5 mr-2 mt-1 dark:text-gray-900 bg-gray-200 dark:bg-gray-200">
+                                            Monday </span>
+                                        <span
+                                            class="flex items-center rounded-full px-3 py-1 text-xs font-semibold leading-5 mr-2 mt-1 dark:text-gray-900 bg-gray-200 dark:bg-gray-200">
+                                            Asana </span>
+                                        <span
+                                            class="flex items-center rounded-full px-3 py-1 text-xs font-semibold leading-5 mr-2 mt-1 dark:text-gray-900 bg-gray-200 dark:bg-gray-200">
+                                            Agile </span>
+                                        <span
+                                            class="flex items-center rounded-full px-3 py-1 text-xs font-semibold leading-5 mr-2 mt-1 dark:text-gray-900 bg-gray-200 dark:bg-gray-200">
+                                            Waterfall </span>
+
+                                    </div>
+
+                                    <!-- OS -->
+                                    <div class="flex flex-col space-y-3 mt-2 mb-1 hidden">
+                                        <div rel="noopener noreferrer" href="#"
+                                            class="flex sm:items-center flex-col sm:flex-row gap-0.5 sm:gap-4 group">
+                                            <span class="flex-none text-gray-1000  dark:text-gray-100 ">Operating
+                                                Systems</span>
+                                            <span
+                                                class="hidden sm:flex flex-1 border-t border-gray-300 border-dashed shrink dark:border-gray-800"></span>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-wrap mb-2 hidden">
+                                        <span
+                                            class="flex items-center rounded-full px-3 py-1 text-xs font-semibold leading-5 mr-2 mt-1 dark:text-gray-900 bg-gray-200 dark:bg-gray-200">
+                                            Linux </span>
+                                        <span
+                                            class="flex items-center rounded-full px-3 py-1 text-xs font-semibold leading-5 mr-2 mt-1 dark:text-gray-900 bg-gray-200 dark:bg-gray-200">
+                                            Ubuntu </span>
+                                        <span
+                                            class="flex items-center rounded-full px-3 py-1 text-xs font-semibold leading-5 mr-2 mt-1 dark:text-gray-900 bg-gray-200 dark:bg-gray-200">
+                                            Windows </span>
+                                        <span
+                                            class="flex items-center rounded-full px-3 py-1 text-xs font-semibold leading-5 mr-2 mt-1 dark:text-gray-900 bg-gray-200 dark:bg-gray-200">
+                                            Macintosh </span>
+                                        <span
+                                            class="flex items-center rounded-full px-3 py-1 text-xs font-semibold leading-5 mr-2 mt-1 dark:text-gray-900 bg-gray-200 dark:bg-gray-200">
+                                            AWS Linux </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- body content- end -->
+
+                    <div class="cbt-fixed" aria-live="polite">
+                        <div id="chatbot-panel" class="cbt-panel cbt-shadow" role="dialog" aria-modal="false"
+                            aria-labelledby="chatbot-title">
+                            <div class="cbt-header">
+                                <div class="cbt-title" id="chatbot-title">Assistant</div>
+                                <button id="chatbot-close" class="cbt-close" aria-label="Close chat">✕</button>
+                            </div>
+                            <div id="chatbot-messages" class="cbt-body">
+                                <div class="cbt-msg bot">
+                                    <div class="bubble">Hi! How can I help you today?</div>
+                                </div>
+                            </div>
+                            <form id="chatbot-form" class="cbt-input" autocomplete="off">
+                                <input id="chatbot-input" type="text" placeholder="Type a message..."
+                                    aria-label="Type a message" />
+                                <button type="submit" aria-label="Send message">Send</button>
+                            </form>
+                        </div>
+
+                        <button id="chatbot-toggle" class="cbt-btn cbt-shadow" aria-label="Open chat"
+                            aria-expanded="false" aria-controls="chatbot-panel">
+                            💬
+                            <span id="chatbot-badge" class="cbt-badge" style="display:none">1</span>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+<script src="js/jquery.min.js"></script>
+<script src="js/typed.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var clockEl = document.querySelector('.clock');
+
+        // Create dial lines
+        for (var i = 1; i < 60; i++) {
+            var dialLine = document.createElement('div');
+            dialLine.className = 'diallines';
+            dialLine.style.transform = 'rotate(' + (6 * i) + 'deg)';
+            clockEl.appendChild(dialLine);
+        }
+
+        // Init typing effect
+        if (window.jQuery && typeof jQuery.fn.typed === 'function' && document.getElementById('typed-intro')) {
+            jQuery('#typed-intro').typed({
+                strings: [
+                    "Hi, I'm Tayyab Abbas — a Senior Software Engineer and Solutions Architect with 4+ years of professional experience in developing scalable web applications and software solutions. Passionate about problem-solving, building innovative digital products, and sharing knowledge with the developer community. Always eager to learn emerging technologies and contribute to impactful projects."
+                ],
+                typeSpeed: 35,
+                backDelay: 999999, // effectively disables backspacing
+                loop: false,
+                showCursor: true,
+                cursorChar: '|'
+            });
+        }
+
+        function clock() {
+            var weekday = [
+                "Sunday", "Monday", "Tuesday", "Wednesday",
+                "Thursday", "Friday", "Saturday"
+            ];
+
+            var d = new Date(),
+                h = d.getHours(),
+                m = d.getMinutes(),
+                s = d.getSeconds(),
+                date = d.getDate(),
+                month = d.getMonth() + 1,
+                year = d.getFullYear(),
+                day = weekday[d.getDay()],
+
+                hDeg = h * 30 + m * (360 / 720),
+                mDeg = m * 6 + s * (360 / 3600),
+                sDeg = s * 6,
+
+                hEl = document.querySelector('.hour-hand'),
+                mEl = document.querySelector('.minute-hand'),
+                sEl = document.querySelector('.second-hand')
+            // dateEl = document.querySelector('.date'),
+            // dayEl = document.querySelector('.day');
+
+            if (month < 10) {
+                month = "0" + month;
+            }
+
+            hEl.style.transform = "rotate(" + hDeg + "deg)";
+            mEl.style.transform = "rotate(" + mDeg + "deg)";
+            sEl.style.transform = "rotate(" + sDeg + "deg)";
+            // dateEl.innerHTML = date + "/" + month + "/" + year;
+            // dayEl.innerHTML = day;
+        }
+
+        setInterval(clock, 100); // Update every second
+
+        // Chatbot interactions
+        (function () {
+            var panel = document.getElementById('chatbot-panel');
+            var toggle = document.getElementById('chatbot-toggle');
+            var closeBtn = document.getElementById('chatbot-close');
+            var form = document.getElementById('chatbot-form');
+            var input = document.getElementById('chatbot-input');
+            var msgs = document.getElementById('chatbot-messages');
+            var badge = document.getElementById('chatbot-badge');
+
+            function openPanel() {
+                panel.classList.add('open');
+                toggle.setAttribute('aria-expanded', 'true');
+                badge.style.display = 'none';
+            }
+            function closePanel() {
+                panel.classList.remove('open');
+                toggle.setAttribute('aria-expanded', 'false');
+            }
+            toggle.addEventListener('click', function () {
+                if (panel.classList.contains('open')) { closePanel(); } else { openPanel(); }
+            });
+            closeBtn.addEventListener('click', closePanel);
+
+            function appendMessage(text, who) {
+                var row = document.createElement('div');
+                row.className = 'cbt-msg ' + (who || 'bot');
+                var bubble = document.createElement('div');
+                bubble.className = 'bubble';
+                bubble.textContent = text;
+                row.appendChild(bubble);
+                msgs.appendChild(row);
+                msgs.scrollTop = msgs.scrollHeight;
+                return { row: row, bubble: bubble };
+            }
+
+            form.addEventListener('submit', async function (e) {
+                e.preventDefault();
+                var text = (input.value || '').trim();
+                if (!text) return;
+                appendMessage(text, 'user');
+                input.value = '';
+
+                // Typing indicator
+                var typing = appendMessage('Typing…', 'bot');
+
+                try {
+                    var reply = await generateResponse(text);
+                    typing.bubble.textContent = reply;
+                } catch (err) {
+                    typing.bubble.textContent = "Sorry, something went wrong while generating a response.";
+                }
+            });
+
+            // Show a small badge to encourage click
+            setTimeout(function () { if (!panel.classList.contains('open')) badge.style.display = 'inline-block'; }, 1500);
+        })();
+    });
+
+    document.getElementById('burger-menu').addEventListener('click', function () {
+        const sideNav = document.getElementById('side-nav');
+        sideNav.classList.toggle('-translate-x-full');
+        toggleBurgerMenuClose(sideNav);
+    });
+    document.getElementById('burger-menu-close').addEventListener('click', function () {
+        const sideNav = document.getElementById('side-nav');
+        sideNav.classList.toggle('-translate-x-full');
+        toggleBurgerMenuClose(sideNav);
+    });
+    document.getElementById("resume-btn").addEventListener("click", function () {
+        const link = document.createElement("a");
+        link.href = "assets/pdf/Tayyab-CV.pdf"; // <-- put your resume path here
+        link.download = "Tayyab-Abbas.pdf"; // <-- file name when downloaded
+        link.click();
+    });
+    function toggleBurgerMenuClose(sideNav) {
+        const burgerMenuClose = document.getElementById('burger-menu-close');
+        if (sideNav.classList.contains('-translate-x-full') || window.innerWidth >= 1024) { // Check for lg screen size
+            burgerMenuClose.style.display = 'none'; // Hide
+        } else {
+            burgerMenuClose.style.display = 'flex'; // Show
+        }
+    }
+</script>
+
+<script>
+    // Optional: set your Cohere API key at runtime (avoid committing secrets).
+    window.COHERE_API_KEY = 'hvr5vn9zkFRCJdIVj1QNvSBobFDWQfR5tqK53IYH';
+
+    window.PORTFOLIO_DATA = {
+        name: "Tayyab Abbas",
+        title: "Senior Software Engineer & Solutions Architect",
+        contact: {
+            phone: "+92 339 0786039",
+            email: "tayyababbaxi661@gmail.com",
+            location: "Lahore, Punjab, Pakistan",
+            website: "https://tayyababbashaider.github.io",
+        },
+        skills: [
+            "React.js / Next.js",
+            "Vue.js / Nuxt.js",
+            "TypeScript / JavaScript (ES6+)",
+            "Redux / Vuex / State Management",
+            "Node.js / PHP Laravel",
+            "RESTful APIs / GraphQL",
+            "Serverless Architectures / AWS Lambda@Edge",
+            "CI/CD (GitHub Actions, GitLab, Netlify, Vercel)",
+            "Docker & Containerization",
+            "Tailwind CSS / Bootstrap / SCSS",
+            "SEO Optimization & Core Web Vitals",
+            "Agile / Scrum",
+            "OTT Streaming (HLS, DASH, DRM)",
+            "Media Servers & CDNs (Akamai, Cloudflare, CloudFront)",
+            "Database: MySQL / PostgreSQL / MongoDB",
+        ],
+        profiles: {
+            linkedin: "https://www.linkedin.com/in/tayyababbashaider/",
+            github: "https://github.com/tayyababbashaider/",
+            medium: "https://tayyababbashaider.medium.com/",
+            x: "https://x.com/tayyababbasdev",
+            youtube: "https://www.youtube.com/@tayyababbashaider/",
+            stackoverflow: "https://stackoverflow.com/users/17666468/tayyababbashaider",
+            instagram: "https://www.instagram.com/tayyababbashaider/",
+            facebook: "https://www.facebook.com/tayyababbashaider/",
+            twitch: "https://www.twitch.tv/tayyababbashaider",
+            pph: "http://pph.me/tayyababbashaider",
+            fiverr: "https://www.fiverr.com/users/tayyababbasdev",
+            upwork: "https://www.upwork.com/freelancers/~0142c1fdc1dd525e06",
+            kaggle: "https://www.kaggle.com/tayyababbashaider",
+            gravatar: "https://gravatar.com/tayyababbashaider",
+            patreon: "https://www.patreon.com/join/tayyababbas",
+            kofi: "https://ko-fi.com/tayyababbashaider/tiers",
+        },
+        profile:
+            "Senior Software Engineer and Solutions Architect with 4+ years of experience developing scalable web applications and software solutions. Skilled in cloud, serverless, and OTT streaming architectures, with hands-on expertise in React, Vue, Laravel, and AWS services. Experienced in building environments from scratch up to production level. Passionate about problem-solving, mentoring developers, and sharing knowledge with the community.",
+        experience: [
+            {
+                role: "Senior Frontend Developer",
+                company: "Seven Eight Six Media Group",
+                duration: "Mar 2023 – Present (Hinckley, UK)",
+                highlights: [
+                    "Built and launched HijazWorld in React, serving 1000+ active users.",
+                    "Integrated Google Analytics with React Router for user insights.",
+                    "Reduced page load time by 30% via React performance optimizations.",
+                    "Boosted mobile engagement by 25% with responsive design.",
+                    "Mentored 3 junior React developers, reducing bugs by 20%.",
+                ],
+            },
+            {
+                role: "Frontend Developer",
+                company: "Shark Innovation Labs (Al Sharqi)",
+                duration: "Apr 2022 – Mar 2023 (Lahore, PK)",
+                highlights: [
+                    "Migrated projects from React to Vue within a week, showcasing adaptability.",
+                    "Built custom React hooks/components, improving reusability by 25%.",
+                    "Delivered PWAs, boosting mobile retention by 15%.",
+                    "Optimized builds with Webpack, npm, and Tailwind, speeding delivery by 20%.",
+                ],
+            },
+            {
+                role: "Associate Software Engineer",
+                company: "MettleSol",
+                duration: "Apr 2021 – Apr 2022 (Lahore, PK)",
+                highlights: [
+                    "Promoted from intern to engineer in 3 months.",
+                    "Built a real-time gaming app with React + WebSockets.",
+                    "Automated back-end workflows with jobs, cutting manual effort by 70%.",
+                    "Enhanced UI/UX in React apps, improving engagement.",
+                ],
+            },
+            {
+                role: "Apprenticeship",
+                company: "Zauq Group",
+                duration: "2021 – 2022",
+                highlights: [
+                    "Contributed to RFID-based Grocery Website (FYP project).",
+                    "Worked on Vue.js + React-based projects in a learning capacity.",
+                ],
+            },
+        ],
+        education: [
+            {
+                degree: "BSCS (Bachelor of Computer Science)",
+                institution: "Superior University, Lahore",
+                year: "2017 – 2021",
+                details:
+                    "CGPA: 3.33/4.00 | Activities: Hackathon, IEEE Events, FYP (Reactive Grocery App)",
+            },
+        ],
+        projects: [
+            {
+                name: "Hijaz World Platform (Wise Compass)",
+                description:
+                    "An Islamic e-learning and e-commerce platform built with React, Vue, and Laravel. Supports multi-vendor learning and shopping experience.",
+                technologies: ["React", "Vue", "Laravel", "Tailwind"],
+                impact:
+                    "Achieved <1s API response time and supported 500+ concurrent users.",
+            },
+            {
+                name: "Hijaz World Website",
+                description:
+                    "Educational platform providing online Islamic courses with SEO-optimized structure.",
+                technologies: ["Next.js", "React", "SEO"],
+                impact: "Expanded global reach and improved organic traffic.",
+            },
+            {
+                name: "Alsharqi Portal",
+                description:
+                    "React and Vue based portals for agents and customers, serving 200+ DAUs.",
+                technologies: ["React", "Vue", "Bootstrap", "Syncfusion"],
+                impact: "Reduced manual reporting effort by 35%.",
+            },
+            {
+                name: "TED Educational App",
+                description:
+                    "Built a reactive educational app with secure coding practices and extensible architecture.",
+                technologies: ["React", "Redux", "TypeScript"],
+                impact: "Improved usability and delivered production-ready code.",
+            },
+        ],
+        speaking: [
+            { topic: "Mind Map Technique", date: "Jan 2025" },
+            { topic: "Software Design Patterns", date: "Aug 2024" },
+            { topic: "KISS Principle in Programming", date: "Jan 2024" },
+            { topic: "Systems Development Life Cycle", date: "Oct 2023" },
+            { topic: "AWS Lambda@Edge", date: "Mar 2023" },
+            { topic: "Building Applications with Serverless Architectures", date: "Feb 2023" },
+        ],
+    };
+
+    async function generateResponse(query) {
+        try {
+            var portfolioData = window.PORTFOLIO_DATA || {};
+            var systemPrompt = "You are an AI assistant for " + portfolioData.name + "'s portfolio website. \n" +
+                "You have access to the following information about " + portfolioData.name + ":\n\n" +
+                "Title: " + portfolioData.title + "\n" +
+                "Contact: " + JSON.stringify(portfolioData.contact) + "\n" +
+                "Skills: " + (portfolioData.skills || []).join(", ") + "\n" +
+                "Profiles: " + JSON.stringify(portfolioData.profiles) + "\n" +
+                "Profile Summary: " + portfolioData.profile + "\n" +
+                "Experience: " + JSON.stringify(portfolioData.experience) + "\n" +
+                "Education: " + JSON.stringify(portfolioData.education) + "\n" +
+                "Projects: " + JSON.stringify(portfolioData.projects) + "\n" +
+                "Speaking Engagements: " + JSON.stringify(portfolioData.speaking) + "\n\n" +
+                "Your role is to:\n" +
+                "1. Answer questions about " + portfolioData.name + "'s skills, experience, projects, and education\n" +
+                "2. Be professional and concise\n" +
+                "3. Only provide information that is available in the data\n" +
+                "4. If asked about something not in the data, politely say you don't have that information\n" +
+                "5. Format your responses in a clear, readable way\n" +
+                "6. Highlight achievements and specific metrics when relevant\n" +
+                "7. Emphasize technical expertise and impact of work\n\n" +
+                "Remember: You are representing " + portfolioData.name + " professionally.";
+
+            var key = window.COHERE_API_KEY || "";
+            var res = await fetch("https://api.cohere.ai/v1/chat", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": "Bearer " + key
+                },
+                body: JSON.stringify({
+                    model: "command",
+                    message: query,
+                    preamble: systemPrompt,
+                    temperature: 0.7,
+                    max_tokens: 500,
+                    stream: false
+                })
+            });
+
+            if (res.status === 429 || res.status === 403 || res.status === 401) {
+                return "I apologize, but I've reached my monthly limit of free responses or the API key is missing/invalid. Here's what you can do:\n\n" +
+                    "1. Visit my portfolio website at " + (portfolioData.contact?.website || "") + " for more information\n" +
+                    "2. Connect with me on LinkedIn: " + (portfolioData.profiles?.linkedin || "") + "\n" +
+                    "3. Check out my GitHub: " + (portfolioData.profiles?.github || "") + "\n" +
+                    "4. Read my technical articles on Medium: " + (portfolioData.profiles?.medium || "") + "\n" +
+                    "5. Subscribe to my YouTube: " + (portfolioData.profiles?.youtube || "") + "\n\n" +
+                    "Feel free to reach out directly at " + (portfolioData.contact?.email || "") + " for any questions!";
+            }
+
+            var data = await res.json();
+            if (data && data.text) {
+                return data.text;
+            } else {
+                console.error("Unexpected API response format:", data);
+                return "I apologize, but I couldn't generate a response at this time.";
+            }
+        } catch (err) {
+            console.error("Error generating AI response:", err);
+            return "I apologize, but I'm having trouble processing your request right now. Please try again later.";
+        }
+    }
+</script>
+
+</html>

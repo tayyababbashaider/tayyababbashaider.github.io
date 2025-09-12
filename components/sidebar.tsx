@@ -33,17 +33,17 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
       {/* Sidebar */}
       <nav
         className={cn(
-          "absolute z-30 flex h-full max-h-screen min-h-screen w-3/4 flex-none transform flex-col overflow-y-auto border-r border-gray-150 bg-white pb-10 transition duration-200 ease-in-out dark:border-gray-800 dark:bg-gray-900 sm:w-1/2 sm:pb-0 md:w-1/3 lg:relative lg:z-auto lg:w-56 lg:translate-x-0 lg:bg-gray-50 lg:dark:bg-gray-900 2xl:w-72 3xl:w-80",
+          "absolute z-30 flex h-full max-h-screen min-h-screen w-3/4 flex-none transform flex-col overflow-y-auto border-r border-gray-150 bg-white pb-10 transition duration-200 ease-in-out dark:border-gray-800 dark:bg-gray-900 sm:w-1/2 sm:pb-0 md:w-72 lg:relative lg:z-auto lg:w-72 lg:translate-x-0 lg:bg-gray-50 lg:dark:bg-gray-900 2xl:w-72 3xl:w-80",
           isOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0",
         )}
       >
         {/* Header */}
-        <div className="filter-blur sticky top-0 z-10 flex items-center justify-between px-3 py-4 dark:border-b dark:border-gray-900">
+        <div className="filter-blur sticky top-0 z-10 flex items-center justify-between px-3 py-4 bg-white dark:border-b dark:border-gray-900">
           <div className="flex items-center space-x-3">
             <img src="/professional-headshot.png" alt="Tayyab Abbas" className="h-10 w-10 rounded-full object-cover" />
             <div>
-              <h2 className="text-sm font-bold text-white line-clamp-1">Tayyab Abbas Haider</h2>
-              <span className="text-sm text-white/70 line-clamp-1">
+              <h2 className="text-sm font-bold text-black line-clamp-1">Tayyab Abbas Haider</h2>
+              <span className="text-sm text-black/70 line-clamp-1">
                 <a href="mailto:tayyababbaxi661@gmail.com">tayyababbaxi661@gmail.com</a>
               </span>
             </div>

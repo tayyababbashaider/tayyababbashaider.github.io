@@ -5,7 +5,7 @@ import { MapPin } from "lucide-react"
 
 export function StatusCards() {
   return (
-    <div className="grid items-start grid-cols-1 gap-6 grid-cols-12">
+    <div className="grid items-start grid-cols-1 md:grid-cols-12 gap-6">
       <div className="col-span-2 pt-8 text-lg font-extrabold text-black dark:text-white md:pt-0 md:text-right md:text-base md:font-normal md:text-opacity-40"></div>
       <div className="col-span-10">
         <div className="grid md:grid-cols-3 gap-5">

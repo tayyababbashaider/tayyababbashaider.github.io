@@ -23,7 +23,7 @@ export function HeroSection() {
   }, [])
 
   return (
-    <div className="grid items-start grid-cols-1 gap-6 grid-cols-12">
+    <div className="grid items-start grid-cols-1 gap-6">
       <div className="col-span-10">
         <div className="prose w-full text-primary">
           <div
@@ -35,7 +35,7 @@ export function HeroSection() {
             }}
           >
             <div className="absolute inset-0 bg-black/70"></div>
-            <p className="relative z-10 bg-black/70 p-4 rounded">
+            <p className="relative z-9 bg-black/70 p-4 rounded">
               <span className="font-mono">
                 {displayedText}
                 <span className="animate-pulse">|</span>

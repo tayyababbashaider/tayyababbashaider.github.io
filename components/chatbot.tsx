@@ -15,14 +15,23 @@ export function Chatbot() {
   const [messages, setMessages] = useState<Message[]>([{ text: "Hi! How can I help you today?", isUser: false }])
   const [inputValue, setInputValue] = useState("")
   const [showBadge, setShowBadge] = useState(false)
+  const [lastSeenMessageIndex, setLastSeenMessageIndex] = useState(0)
   const messagesEndRef = useRef<HTMLDivElement>(null)
 
+  // Check if there are unseen assistant messages
   useEffect(() => {
-    const timer = setTimeout(() => {
-      if (!isOpen) setShowBadge(true)
-    }, 1500)
-    return () => clearTimeout(timer)
-  }, [isOpen])
+    const unseenAssistantMessages = messages.filter((message, index) => 
+      !message.isUser && index >= lastSeenMessageIndex
+    )
+    setShowBadge(unseenAssistantMessages.length > 0 && !isOpen)
+  }, [messages, lastSeenMessageIndex, isOpen])
+
+  // Auto-mark messages as seen when chat is open and new messages arrive
+  useEffect(() => {
+    if (isOpen && messages.length > lastSeenMessageIndex) {
+      setLastSeenMessageIndex(messages.length)
+    }
+  }, [messages, isOpen, lastSeenMessageIndex])
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
@@ -60,7 +69,11 @@ export function Chatbot() {
 
   const toggleChat = () => {
     setIsOpen(!isOpen)
-    if (!isOpen) setShowBadge(false)
+    if (!isOpen) {
+      // When opening chat, mark all current messages as seen
+      setLastSeenMessageIndex(messages.length)
+      setShowBadge(false)
+    }
   }
 
   return (
@@ -70,18 +83,18 @@ export function Chatbot() {
         <div className="mb-4 w-80 max-h-96 bg-white dark:bg-slate-800 rounded-2xl shadow-2xl overflow-hidden">
           {/* Header */}
           <div className="flex items-center justify-between p-3 bg-indigo-600 text-white">
-            <div className="font-semibold text-sm">Assistant</div>
+            <div className="font-semibold text-sm">Tayyab’s Assistant</div>
             <button onClick={() => setIsOpen(false)} className="text-white/90 hover:text-white">
               <X className="h-4 w-4" />
             </button>
           </div>
 
           {/* Messages */}
-          <div className="h-80 overflow-y-auto p-3 bg-gradient-to-b from-indigo-50/50 to-transparent dark:from-indigo-900/20">
+          <div className="h-50 overflow-y-auto p-3 bg-gradient-to-b from-indigo-50/50 to-transparent dark:from-indigo-900/20">
             {messages.map((message, index) => (
               <div key={index} className={`flex mb-2 ${message.isUser ? "justify-end" : "justify-start"}`}>
                 <div
-                  className={`max-w-xs px-3 py-2 rounded-2xl text-sm ${
+                  className={`w-3/4 px-3 py-2 rounded-2xl text-sm break-words ${
                     message.isUser
                       ? "bg-indigo-600 text-white rounded-br-md"
                       : "bg-slate-100 dark:bg-slate-700 text-slate-900 dark:text-slate-100 rounded-bl-md"

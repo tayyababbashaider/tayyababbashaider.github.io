@@ -9,6 +9,9 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-}
+  output: "export", // 👈 important for static export
+  basePath: "", // leave empty since it's root (username.github.io)
+  assetPrefix: ".", // ensures assets load correctly
+};
 
-export default nextConfig
+export default nextConfig;

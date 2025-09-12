@@ -1,17 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
-  typescript: {
-    ignoreBuildErrors: true,
-  },
+  output: 'export',  // static export
   images: {
-    unoptimized: true,
+    unoptimized: true, // required for GitHub Pages
   },
-  output: "export", // required for GitHub Pages
-  basePath: "",     // root domain
-  // ❌ remove assetPrefix, it breaks next/font
 };
 
-export default nextConfig;
+module.exports = nextConfig;

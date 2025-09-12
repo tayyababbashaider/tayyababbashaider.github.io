@@ -170,14 +170,34 @@ const PORTFOLIO_DATA = {
 
 async function generateResponse(query: string): Promise<string> {
   try {
-    const res = await fetch("/api/chat", {
+    const apiKey = (window as any).COHERE_API_KEY;
+
+    const systemPrompt = `
+You are an AI assistant for ${PORTFOLIO_DATA.name}'s portfolio website.
+Title: ${PORTFOLIO_DATA.title}
+Contact: ${JSON.stringify(PORTFOLIO_DATA.contact)}
+Skills: ${(PORTFOLIO_DATA.skills || []).join(", ")}
+Profiles: ${JSON.stringify(PORTFOLIO_DATA.profiles)}
+Profile Summary: ${PORTFOLIO_DATA.profile}
+`;
+
+    const res = await fetch("https://api.cohere.ai/v1/chat", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ query, portfolioData: PORTFOLIO_DATA }),
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${apiKey}`,
+      },
+      body: JSON.stringify({
+        model: "command",
+        message: query,
+        preamble: systemPrompt,
+        temperature: 0.7,
+        max_tokens: 500,
+      }),
     });
 
     const data = await res.json();
-    return data.text;
+    return data.text ?? "Sorry, no response.";
   } catch (err) {
     console.error("Error calling Cohere:", err);
     return "I’m having trouble connecting to the assistant right now. Please try again later.";

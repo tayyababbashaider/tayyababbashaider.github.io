@@ -9,9 +9,9 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  output: "export", // 👈 important for static export
-  basePath: "", // leave empty since it's root (username.github.io)
-  assetPrefix: ".", // ensures assets load correctly
+  output: "export", // required for GitHub Pages
+  basePath: "",     // root domain
+  // ❌ remove assetPrefix, it breaks next/font
 };
 
 export default nextConfig;

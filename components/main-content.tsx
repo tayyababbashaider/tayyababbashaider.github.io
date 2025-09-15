@@ -24,7 +24,7 @@ export function MainContent({ onMenuClick }: MainContentProps) {
   return (
     <div className="relative flex max-h-screen w-full flex-col overflow-y-auto bg-white dark:bg-black">
       {/* Header */}
-      <div className="filter-blur sticky top-0 z-10 flex flex-col justify-center px-3 py-2 dark:border-b dark:border-gray-900 bg-white/80 dark:bg-black/80 backdrop-blur-sm">
+      <div className="filter-blur sticky top-0 z-10 flex flex-col justify-center px-3 py-2 dark:border-b dark:border-gray-900 bg-white/80 border-b dark:bg-black/80 backdrop-blur-sm">
         <div className="flex items-center justify-between w-full">
           <button
             onClick={onMenuClick}

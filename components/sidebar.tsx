@@ -41,7 +41,7 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
           <div className="flex items-center space-x-3">
             <img src="/professional-headshot.jpg" alt="Tayyab Abbas" className="h-10 w-10 rounded-full object-cover" />
             <div>
-              <h2 className="text-sm font-bold text-black dark:text-gray-200 line-clamp-1">Tayyab Abbas Haider</h2>
+              <h2 className="text-sm font-bold text-black dark:text-gray-200 line-clamp-1">{t("name_title")}</h2>
               <span className="text-sm text-black/70 dark:text-gray-200 line-clamp-1">
                 <a href="mailto:tayyababbaxi661@gmail.com">tayyababbaxi661@gmail.com</a>
               </span>

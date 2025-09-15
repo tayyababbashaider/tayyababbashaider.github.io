@@ -5,6 +5,8 @@ import Script from "next/script";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { I18nProvider } from "@/components/i18n-provider";
+import GATracker from "@/components/ga-tracker";
+import { GA_ID } from "@/lib/ga";
 
 export const metadata: Metadata = {
   title: "Tayyab Portfolio",
@@ -20,33 +22,34 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        {/* 👇 This script will put your Cohere API key on window */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.COHERE_API_KEY = "hvr5vn9zkFRCJdIVj1QNvSBobFDWQfR5tqK53IYH";
-            `,
-          }}
-        />
-        {/* 👇 Google public key exposed to window (hardcoded) */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.GOOGLE_PUBLIC_KEY = "G-P3CSHDPC";
-            `,
-          }}
-        />
-        {/* Google Analytics (gtag.js) with hardcoded Measurement ID */}
+        {/* Google Analytics (GA4) */}
         <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=G-P3CSHDPC`}
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
           strategy="afterInteractive"
         />
         <Script id="ga-gtag" strategy="afterInteractive">
           {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-P3CSHDPC', { send_page_view: true });
+            (function () {
+              function getCookie(name) {
+                const value = "; " + document.cookie;
+                const parts = value.split("; " + name + "=");
+                if (parts.length === 2) return parts.pop().split(";").shift();
+              }
+              function setCookie(name, value, days) {
+                const d = new Date();
+                d.setTime(d.getTime() + (days*24*60*60*1000));
+                document.cookie = name + "=" + value + ";expires=" + d.toUTCString() + ";path=/;SameSite=Lax";
+              }
+              var id = getCookie('gaid') || '${GA_ID}';
+              if (!getCookie('gaid')) setCookie('gaid', id, 3650);
+
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              window.gtag = gtag;
+              gtag('js', new Date());
+              // Disable automatic page_view; tracked via route changes
+              gtag('config', id, { send_page_view: false });
+            })();
           `}
         </Script>
       </head>
@@ -54,6 +57,7 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} disableTransitionOnChange>
           <I18nProvider>
             {children}
+            <GATracker />
           </I18nProvider>
         </ThemeProvider>
       </body>

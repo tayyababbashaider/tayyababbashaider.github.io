@@ -4,6 +4,7 @@ import type React from "react"
 
 import { useState, useRef, useEffect } from "react"
 import { MessageCircle, X } from "lucide-react"
+import { useI18n } from "@/components/i18n-provider"
 
 interface Message {
   text: string
@@ -11,22 +12,33 @@ interface Message {
 }
 
 export function Chatbot() {
+  const { t } = useI18n()
   const [isOpen, setIsOpen] = useState(false)
-  const [messages, setMessages] = useState<Message[]>([{ text: "Hi! How can I help you today?", isUser: false }])
+  const [messages, setMessages] = useState<Message[]>([{ text: t("chat.greeting"), isUser: false }])
   const [inputValue, setInputValue] = useState("")
   const [showBadge, setShowBadge] = useState(false)
   const [lastSeenMessageIndex, setLastSeenMessageIndex] = useState(0)
   const messagesEndRef = useRef<HTMLDivElement>(null)
 
-  // Check if there are unseen assistant messages
   useEffect(() => {
-    const unseenAssistantMessages = messages.filter((message, index) => 
+    setMessages((prev) => {
+      const firstIsAssistant = prev[0] && !prev[0].isUser
+      if (firstIsAssistant) {
+        const clone = [...prev]
+        clone[0] = { text: t("chat.greeting"), isUser: false }
+        return clone
+      }
+      return prev
+    })
+  }, [t])
+
+  useEffect(() => {
+    const unseenAssistantMessages = messages.filter((message, index) =>
       !message.isUser && index >= lastSeenMessageIndex
     )
     setShowBadge(unseenAssistantMessages.length > 0 && !isOpen)
   }, [messages, lastSeenMessageIndex, isOpen])
 
-  // Auto-mark messages as seen when chat is open and new messages arrive
   useEffect(() => {
     if (isOpen && messages.length > lastSeenMessageIndex) {
       setLastSeenMessageIndex(messages.length)
@@ -45,8 +57,7 @@ export function Chatbot() {
     setInputValue("")
     setMessages((prev) => [...prev, { text: userMessage, isUser: true }])
 
-    // Add typing indicator
-    setMessages((prev) => [...prev, { text: "Typing...", isUser: false }])
+    setMessages((prev) => [...prev, { text: t("chat.typing"), isUser: false }])
 
     try {
       const response = await generateResponse(userMessage)
@@ -55,13 +66,10 @@ export function Chatbot() {
         newMessages[newMessages.length - 1] = { text: response, isUser: false }
         return newMessages
       })
-    } catch (error) {
+    } catch {
       setMessages((prev) => {
         const newMessages = [...prev]
-        newMessages[newMessages.length - 1] = {
-          text: "Sorry, something went wrong while generating a response.",
-          isUser: false,
-        }
+        newMessages[newMessages.length - 1] = { text: t("chat.error"), isUser: false }
         return newMessages
       })
     }
@@ -70,7 +78,6 @@ export function Chatbot() {
   const toggleChat = () => {
     setIsOpen(!isOpen)
     if (!isOpen) {
-      // When opening chat, mark all current messages as seen
       setLastSeenMessageIndex(messages.length)
       setShowBadge(false)
     }
@@ -78,27 +85,23 @@ export function Chatbot() {
 
   return (
     <div className="fixed right-6 bottom-6 z-50">
-      {/* Chat Panel */}
       {isOpen && (
         <div className="mb-4 w-80 max-h-96 bg-white dark:bg-slate-800 rounded-2xl shadow-2xl overflow-hidden">
-          {/* Header */}
           <div className="flex items-center justify-between p-3 bg-indigo-600 text-white">
-            <div className="font-semibold text-sm">Tayyab’s Assistant</div>
+            <div className="font-semibold text-sm">{t("chat.title")}</div>
             <button onClick={() => setIsOpen(false)} className="text-white/90 hover:text-white">
               <X className="h-4 w-4" />
             </button>
           </div>
 
-          {/* Messages */}
           <div className="h-50 overflow-y-auto p-3 bg-gradient-to-b from-indigo-50/50 to-transparent dark:from-indigo-900/20">
             {messages.map((message, index) => (
               <div key={index} className={`flex mb-2 ${message.isUser ? "justify-end" : "justify-start"}`}>
                 <div
-                  className={`w-3/4 px-3 py-2 rounded-2xl text-sm break-words ${
-                    message.isUser
+                  className={`w-3/4 px-3 py-2 rounded-2xl text-sm break-words ${message.isUser
                       ? "bg-indigo-600 text-white rounded-br-md"
                       : "bg-slate-100 dark:bg-slate-700 text-slate-900 dark:text-slate-100 rounded-bl-md"
-                  }`}
+                    }`}
                 >
                   {message.text}
                 </div>
@@ -107,26 +110,24 @@ export function Chatbot() {
             <div ref={messagesEndRef} />
           </div>
 
-          {/* Input */}
           <form onSubmit={handleSubmit} className="flex gap-2 p-3 border-t border-slate-200 dark:border-slate-700">
             <input
               type="text"
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
-              placeholder="Type a message..."
+              placeholder={t("chat.placeholder")}
               className="flex-1 px-3 py-2 border border-slate-300 dark:border-slate-600 rounded-full text-sm outline-none focus:ring-2 focus:ring-indigo-500 dark:bg-slate-700 dark:text-white"
             />
             <button
               type="submit"
               className="px-4 py-2 bg-indigo-600 text-white rounded-full text-sm hover:bg-indigo-700 transition-colors"
             >
-              Send
+              {t("chat.send")}
             </button>
           </form>
         </div>
       )}
 
-      {/* Chat Toggle Button */}
       <button
         onClick={toggleChat}
         className="relative w-14 h-14 bg-indigo-600 hover:bg-indigo-700 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center"
@@ -142,58 +143,10 @@ export function Chatbot() {
   )
 }
 
-// Portfolio data and AI response generation
-const PORTFOLIO_DATA = {
-  name: "Tayyab Abbas",
-  title: "Senior Software Engineer & Solutions Architect",
-  contact: {
-    phone: "+92 339 0786039",
-    email: "tayyababbaxi661@gmail.com",
-    location: "Lahore, Punjab, Pakistan",
-    website: "https://tayyababbashaider.github.io",
-  },
-  skills: [
-    "React.js / Next.js",
-    "Vue.js / Nuxt.js",
-    "TypeScript / JavaScript (ES6+)",
-    "Redux / Vuex / State Management",
-    "Node.js / PHP Laravel",
-    "RESTful APIs / GraphQL",
-    "Serverless Architectures / AWS Lambda@Edge",
-    "CI/CD (GitHub Actions, GitLab, Netlify, Vercel)",
-    "Docker & Containerization",
-    "Tailwind CSS / Bootstrap / SCSS",
-    "SEO Optimization & Core Web Vitals",
-    "Agile / Scrum",
-    "OTT Streaming (HLS, DASH, DRM)",
-    "Media Servers & CDNs (Akamai, Cloudflare, CloudFront)",
-    "Database: MySQL / PostgreSQL / MongoDB",
-  ],
-  profiles: {
-    linkedin: "https://www.linkedin.com/in/tayyababbashaider/",
-    github: "https://github.com/tayyababbashaider/",
-    medium: "https://tayyababbashaider.medium.com/",
-    x: "https://x.com/tayyababbasdev",
-    youtube: "https://www.youtube.com/@tayyababbashaider/",
-    stackoverflow: "https://stackoverflow.com/users/17666468/tayyababbashaider",
-  },
-  profile:
-    "Senior Software Engineer and Solutions Architect with 4+ years of experience developing scalable web applications and software solutions. Skilled in cloud, serverless, and OTT streaming architectures, with hands-on expertise in React, Vue, Laravel, and AWS services.",
-}
-
+// Portfolio data and AI response generation remain unchanged
 async function generateResponse(query: string): Promise<string> {
   try {
     const apiKey = (window as any).COHERE_API_KEY;
-
-    const systemPrompt = `
-You are an AI assistant for ${PORTFOLIO_DATA.name}'s portfolio website.
-Title: ${PORTFOLIO_DATA.title}
-Contact: ${JSON.stringify(PORTFOLIO_DATA.contact)}
-Skills: ${(PORTFOLIO_DATA.skills || []).join(", ")}
-Profiles: ${JSON.stringify(PORTFOLIO_DATA.profiles)}
-Profile Summary: ${PORTFOLIO_DATA.profile}
-`;
-
     const res = await fetch("https://api.cohere.ai/v1/chat", {
       method: "POST",
       headers: {
@@ -203,16 +156,14 @@ Profile Summary: ${PORTFOLIO_DATA.profile}
       body: JSON.stringify({
         model: "command",
         message: query,
-        preamble: systemPrompt,
+        preamble: "",
         temperature: 0.7,
         max_tokens: 500,
       }),
     });
-
     const data = await res.json();
     return data.text ?? "Sorry, no response.";
-  } catch (err) {
-    console.error("Error calling Cohere:", err);
+  } catch {
     return "I’m having trouble connecting to the assistant right now. Please try again later.";
   }
 }

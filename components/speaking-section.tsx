@@ -1,17 +1,20 @@
+import { useI18n } from "@/components/i18n-provider"
+
 export function SpeakingSection() {
+  const { t } = useI18n()
   const talks = [
-    { topic: "Mind map technique", date: "Jan '25" },
-    { topic: "Software design patterns", date: "Aug '24" },
-    { topic: "KISS principle in programming", date: "Jan '24" },
-    { topic: "Systems development life cycle", date: "Oct '23" },
-    { topic: "AWS lambda@edge", date: "Mar '23" },
-    { topic: "Building applications with serverless architectures", date: "Feb '23" },
+    { topic: t("speaking.topic.mindmap"), date: "Jan '25" },
+    { topic: t("speaking.topic.patterns"), date: "Aug '24" },
+    { topic: t("speaking.topic.kiss"), date: "Jan '24" },
+    { topic: t("speaking.topic.sdlc"), date: "Oct '23" },
+    { topic: t("speaking.topic.lambdaedge"), date: "Mar '23" },
+    { topic: t("speaking.topic.serverless"), date: "Feb '23" },
   ]
 
   return (
     <div className="grid items-start grid-cols-1 gap-6 md:grid-cols-12">
       <h4 className="col-span-2 pt-8 text-lg font-extrabold text-black dark:text-white md:pt-0 text-left md:text-base md:font-normal md:text-opacity-40">
-        Speaking
+        {t("speaking.title")}
       </h4>
       <div className="col-span-10">
         <div className="flex flex-col space-y-3">

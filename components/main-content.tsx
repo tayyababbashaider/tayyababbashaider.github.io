@@ -8,12 +8,15 @@ import { WorkSection } from "@/components/work-section"
 import { SpeakingSection } from "@/components/speaking-section"
 import { StackSection } from "@/components/stack-section"
 import { ModeToggle } from "./mode-toggle"
+import { LanguageToggle } from "@/components/language-toggle"
+import { useI18n } from "@/components/i18n-provider"
 
 interface MainContentProps {
   onMenuClick: () => void
 }
 
 export function MainContent({ onMenuClick }: MainContentProps) {
+  const { t } = useI18n()
   const handleDownloadCV = () => {
     const link = document.createElement("a")
     link.href = "../pdf/Tayyab-CV.pdf"
@@ -32,14 +35,14 @@ export function MainContent({ onMenuClick }: MainContentProps) {
           >
             <Menu className="h-5 w-5" />
           </button>
-
-          <div className="flex-1 flex justify-end">
+          <div className="flex-1 flex justify-end gap-3">
+            <LanguageToggle />
             <ModeToggle />
             <button
               onClick={handleDownloadCV}
-              className="ms-3 px-4 py-2 rounded-md font-semibold border border-gray-200 bg-gray-100 text-gray-900 transition hover:bg-gray-200 dark:border-gray-800 dark:bg-gray-900 dark:text-gray-100 dark:hover:bg-gray-800"
+              className="px-4 py-2 rounded-md font-semibold border border-gray-200 bg-gray-100 text-gray-900 transition hover:bg-gray-200 dark:border-gray-800 dark:bg-gray-900 dark:text-gray-100 dark:hover:bg-gray-800"
             >
-              Download CV
+              {t("download_cv")}
             </button>
           </div>
         </div>

@@ -1,13 +1,20 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
+import { useI18n } from "@/components/i18n-provider"
 
 export function HeroSection() {
+  const { t } = useI18n()
   const [displayedText, setDisplayedText] = useState("")
-  const fullText =
-    "Hi, I'm Tayyab Abbas — a Senior Software Engineer and Solutions Architect with 4+ years of professional experience in developing scalable web applications and software solutions. Passionate about problem-solving, building innovative digital products, and sharing knowledge with the developer community. Always eager to learn emerging technologies and contribute to impactful projects."
+  const fullText = t("hero.intro")
+  const timerRef = useRef<number | null>(null)
 
   useEffect(() => {
+    if (timerRef.current) {
+      clearTimeout(timerRef.current)
+      timerRef.current = null
+    }
+    setDisplayedText("")
     let currentIndex = 0
     const typeSpeed = 35
 
@@ -15,12 +22,18 @@ export function HeroSection() {
       if (currentIndex < fullText.length) {
         setDisplayedText(fullText.slice(0, currentIndex + 1))
         currentIndex++
-        setTimeout(typeText, typeSpeed)
+        timerRef.current = window.setTimeout(typeText, typeSpeed)
       }
     }
 
     typeText()
-  }, [])
+    return () => {
+      if (timerRef.current) {
+        clearTimeout(timerRef.current)
+        timerRef.current = null
+      }
+    }
+  }, [fullText])
 
   return (
     <div className="grid items-start grid-cols-1 gap-6">
@@ -43,14 +56,10 @@ export function HeroSection() {
             </p>
           </div>
 
-          <p className="mt-6">
-            Experienced in providing custom solutions, skilled with cloud, serverless, AWS's multiple services and OTT,
-            building environments from the scratch up to <strong>production</strong> level.
-          </p>
+          <p className="mt-6">{t("hero.p1")}</p>
 
           <p>
-            I'm currently building an app that brings together learning experience, management, and e-commerce along
-            with multi vendor support at{" "}
+            {t("hero.p2")}{" "}
             <a
               target="_blank"
               rel="noopener noreferrer"
@@ -63,8 +72,7 @@ export function HeroSection() {
           </p>
 
           <p>
-            As a experienced software engineer, I have a proven track record of delivering high-quality solutions to
-            clients. You can find my professional profile on{" "}
+            {t("hero.p3")}{" "}
             <a
               target="_blank"
               rel="noopener noreferrer"
@@ -73,7 +81,7 @@ export function HeroSection() {
             >
               LinkedIn
             </a>{" "}
-            and explore my services on{" "}
+            {t("hero.p4")}{" "}
             <a
               target="_blank"
               rel="noopener noreferrer"
@@ -99,62 +107,16 @@ export function HeroSection() {
               className="text-orange-500 hover:underline"
             >
               PeoplePerHour
-            </a>{" "}
-            for any project proposals.
+            </a>
+            .
           </p>
 
           <p>
-            After graduation, I spent 1 year as a Software Engineer at{" "}
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://www.linkedin.com/company/shark-innovation-labs/posts/?feedView=all"
-              className="text-orange-500 hover:underline"
-            >
-              Shark Innovation Labs
-            </a>
-            , a child company of{" "}
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://www.alsharqi.co/"
-              className="text-blue-600 hover:underline"
-            >
-              Al Sharqi
-            </a>
-            , working with a Dubai-based client. This experience marked a significant milestone in my career, leveraging
-            my Vue Js and React Js skills.
-          </p>
-
-          <p>
-            Before Shark Innovation Labs, I completed an internship as a Trainee and Associate Software Engineer at{" "}
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://www.linkedin.com/company/mettlesol/posts/?feedView=all"
-              className="text-orange-500 hover:underline"
-            >
-              Mettlesol
-            </a>
-            , where I worked on various projects, including an online website for the company using React.js and
-            Firebase. Additionally, I participated in an Apprenticeship at{" "}
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://www.linkedin.com/company/zauq-group/posts/?feedView=all"
-              className="text-blue-600 hover:underline"
-            >
-              Zauq Group
-            </a>
-            , contributing to an RFID-based Grocery Website project as part of my university's Final Year Project.
-          </p>
-
-          <p>
-            I also co-host the multiple{" "}
+            {t("hero.training.prefix")}{" "}
             <a target="_blank" rel="noopener noreferrer" href="#" className="text-orange-500 hover:underline">
-              training
+              {t("header.training")}
             </a>{" "}
-            sessions about software development.
+            {t("hero.training.suffix")}
           </p>
         </div>
       </div>

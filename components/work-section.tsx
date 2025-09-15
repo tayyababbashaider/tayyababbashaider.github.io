@@ -1,41 +1,13 @@
+import { useI18n } from "@/components/i18n-provider"
+
 export function WorkSection() {
-  const workExperience = [
-    {
-      company: "IT Roadway && 786 Media Group",
-      role: "Senior Software Engineer",
-      period: "2023—",
-      url: "https://itroadway.com",
-    },
-    {
-      company: "Freelancing",
-      role: "Sr. Software Engineer",
-      period: "2022—",
-      url: "http://pph.me/tayyababbashaider",
-    },
-    {
-      company: "AlSharqi && Shark Innovation Labs",
-      role: "Software Engineer",
-      period: "2022—23",
-      url: "https://www.alsharqi.co/",
-    },
-    {
-      company: "MettleSol",
-      role: "Ass. Software Engineer",
-      period: "2021—22",
-      url: "https://www.linkedin.com/company/mettlesol/posts/?feedView=all",
-    },
-    {
-      company: "Zauq Group",
-      role: "Apprenticeship",
-      period: "2021—22",
-      url: "https://www.linkedin.com/company/zauq-group/posts/?feedView=all",
-    },
-  ]
+  const { t } = useI18n()
+  const workExperience = t<any[]>("work.experiences")
 
   return (
     <div className="grid items-start grid-cols-1 gap-6 md:grid-cols-12">
       <h4 className="col-span-2 pt-8 text-lg font-extrabold text-black dark:text-white md:pt-0 text-left md:text-base md:font-normal md:text-opacity-40">
-        Work
+        {t("work.title")}
       </h4>
       <div className="col-span-10">
         <div className="flex flex-col space-y-3">

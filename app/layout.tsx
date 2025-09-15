@@ -4,6 +4,7 @@ import { GeistMono } from "geist/font/mono";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import { I18nProvider } from "@/components/i18n-provider";
 
 export const metadata: Metadata = {
   title: "Tayyab Portfolio",
@@ -30,7 +31,9 @@ export default function RootLayout({
       </head>
       <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} disableTransitionOnChange>
-          {children}
+          <I18nProvider>
+            {children}
+          </I18nProvider>
         </ThemeProvider>
         <Analytics />
       </body>

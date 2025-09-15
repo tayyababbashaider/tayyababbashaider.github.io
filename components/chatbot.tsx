@@ -99,8 +99,8 @@ export function Chatbot() {
               <div key={index} className={`flex mb-2 ${message.isUser ? "justify-end" : "justify-start"}`}>
                 <div
                   className={`w-3/4 px-3 py-2 rounded-2xl text-sm break-words ${message.isUser
-                      ? "bg-indigo-600 text-white rounded-br-md"
-                      : "bg-slate-100 dark:bg-slate-700 text-slate-900 dark:text-slate-100 rounded-bl-md"
+                    ? "bg-indigo-600 text-white rounded-br-md"
+                    : "bg-slate-100 dark:bg-slate-700 text-slate-900 dark:text-slate-100 rounded-bl-md"
                     }`}
                 >
                   {message.text}
@@ -143,10 +143,56 @@ export function Chatbot() {
   )
 }
 
-// Portfolio data and AI response generation remain unchanged
+// Portfolio data and AI response generation
+const PORTFOLIO_DATA = {
+  name: "Tayyab Abbas",
+  title: "Senior Software Engineer & Solutions Architect",
+  contact: {
+    phone: "+92 339 0786039",
+    email: "tayyababbaxi661@gmail.com",
+    location: "Lahore, Punjab, Pakistan",
+    website: "https://tayyababbashaider.github.io",
+    linkedin: "https://www.linkedin.com/in/tayyababbashaider/",
+  },
+  skills: [
+    "React.js / Next.js",
+    "Vue.js / Nuxt.js",
+    "TypeScript / JavaScript (ES6+)",
+    "Redux / Vuex / State Management",
+    "Node.js / PHP Laravel",
+    "RESTful APIs / GraphQL",
+    "Serverless Architectures / AWS Lambda@Edge",
+    "CI/CD (GitHub Actions, GitLab, Netlify, Vercel)",
+    "Docker & Containerization",
+    "Tailwind CSS / Bootstrap / SCSS",
+    "SEO Optimization & Core Web Vitals",
+    "Agile / Scrum",
+    "OTT Streaming (HLS, DASH, DRM)",
+    "Media Servers & CDNs (Akamai, Cloudflare, CloudFront)",
+    "Database: MySQL / PostgreSQL / MongoDB",
+  ],
+  profiles: {
+    linkedin: "https://www.linkedin.com/in/tayyababbashaider/",
+    github: "https://github.com/tayyababbashaider/",
+    medium: "https://tayyababbashaider.medium.com/",
+    x: "https://x.com/tayyababbasdev",
+    youtube: "https://www.youtube.com/@tayyababbashaider/",
+    stackoverflow: "https://stackoverflow.com/users/17666468/tayyababbashaider",
+  },
+  profile:
+    "Senior Software Engineer and Solutions Architect with 4+ years of experience developing scalable web applications and software solutions. Skilled in cloud, serverless, and OTT streaming architectures, with hands-on expertise in React, Vue, Laravel, and AWS services.",
+}
 async function generateResponse(query: string): Promise<string> {
   try {
     const apiKey = (window as any).COHERE_API_KEY;
+    const systemPrompt = `
+You are an AI assistant for ${PORTFOLIO_DATA.name}'s portfolio website.
+Title: ${PORTFOLIO_DATA.title}
+Contact: ${JSON.stringify(PORTFOLIO_DATA.contact)}
+Skills: ${(PORTFOLIO_DATA.skills || []).join(", ")}
+Profiles: ${JSON.stringify(PORTFOLIO_DATA.profiles)}
+Profile Summary: ${PORTFOLIO_DATA.profile}
+`;
     const res = await fetch("https://api.cohere.ai/v1/chat", {
       method: "POST",
       headers: {
@@ -156,7 +202,7 @@ async function generateResponse(query: string): Promise<string> {
       body: JSON.stringify({
         model: "command",
         message: query,
-        preamble: "",
+        preamble: systemPrompt,
         temperature: 0.7,
         max_tokens: 500,
       }),

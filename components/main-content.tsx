@@ -7,6 +7,7 @@ import { OnlineSection } from "@/components/online-section"
 import { WorkSection } from "@/components/work-section"
 import { SpeakingSection } from "@/components/speaking-section"
 import { StackSection } from "@/components/stack-section"
+import { ModeToggle } from "./mode-toggle"
 
 interface MainContentProps {
   onMenuClick: () => void
@@ -33,9 +34,10 @@ export function MainContent({ onMenuClick }: MainContentProps) {
           </button>
 
           <div className="flex-1 flex justify-end">
+            <ModeToggle />
             <button
               onClick={handleDownloadCV}
-              className="px-4 py-2 rounded-lg font-semibold hover:bg-primary/80 transition dark:text-gray-900 bg-gray-200 dark:bg-gray-200"
+              className="ms-3 px-4 py-2 rounded-md font-semibold border border-gray-200 bg-gray-100 text-gray-900 transition hover:bg-gray-200 dark:border-gray-800 dark:bg-gray-900 dark:text-gray-100 dark:hover:bg-gray-800"
             >
               Download CV
             </button>

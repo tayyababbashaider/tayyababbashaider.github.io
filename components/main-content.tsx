@@ -15,7 +15,7 @@ interface MainContentProps {
 export function MainContent({ onMenuClick }: MainContentProps) {
   const handleDownloadCV = () => {
     const link = document.createElement("a")
-    link.href = "/placeholder.pdf"
+    link.href = "/pdf/Tayyab-CV.pdf"
     link.download = "Tayyab-Abbas.pdf"
     link.click()
   }

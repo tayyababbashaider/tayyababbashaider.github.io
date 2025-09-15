@@ -32,13 +32,13 @@ export function StackSection() {
         { name: "HLS", tooltip: "HTTP Live Streaming Protocol" },
         { name: "DASH", tooltip: "Dynamic Adaptive Streaming over HTTP Protocol" },
         { name: "DRM", tooltip: "Digital Rights Management", grouped: true },
-        { name: "Widevine", tooltip: "Digital Rights Management", grouped: true },
-        { name: "PlayReady", tooltip: "Digital Rights Management", grouped: true },
+        { name: "Widevine", tooltip: "Digital Rights Management", grouped: true, center: true },
+        { name: "PlayReady", tooltip: "Digital Rights Management", grouped: true, center: true },
         { name: "FairPlay", tooltip: "Digital Rights Management", grouped: true, last: true },
         "Media Servers",
         { name: "CDNs", tooltip: "Content Delivery Networks", grouped: true },
-        { name: "Akamai", tooltip: "Content Delivery Networks", grouped: true },
-        { name: "Cloudflare", tooltip: "Content Delivery Networks", grouped: true },
+        { name: "Akamai", tooltip: "Content Delivery Networks", grouped: true, center: true },
+        { name: "Cloudflare", tooltip: "Content Delivery Networks", grouped: true, center: true },
         { name: "Amazon CloudFront", tooltip: "Content Delivery Networks", grouped: true, last: true },
       ],
     },
@@ -68,13 +68,15 @@ export function StackSection() {
       )
     }
 
-    const { name, tooltip, grouped, last } = skill
+    const { name, tooltip, grouped, last, center } = skill
     let className = "flex items-center px-3 py-1 text-xs font-semibold leading-5 mr-1 mt-1 text-gray-900 bg-gray-200"
 
-    if (grouped && !last) {
+    if (grouped && !last && !center) {
       className += " rounded-l-full"
     } else if (grouped && last) {
       className += " rounded-r-full mr-2"
+    } else if (grouped && center) {
+      className += ""
     } else if (!grouped) {
       className += " rounded-full mr-2"
     }

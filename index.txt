@@ -1,10 +1,34 @@
 2:I[9107,[],"ClientPageRoot"]
 3:I[9522,["487","static/chunks/487-6c0978cfc6919a14.js","931","static/chunks/app/page-8368aa390bb9d3b4.js"],"default",1]
-4:I[8003,["185","static/chunks/app/layout-126c849a5f5227d9.js"],""]
-5:I[2798,["185","static/chunks/app/layout-126c849a5f5227d9.js"],"ThemeProvider"]
-6:I[3552,["185","static/chunks/app/layout-126c849a5f5227d9.js"],"I18nProvider"]
-7:I[4707,[],""]
-8:I[6423,[],""]
-0:["oz2YM2UdPYwpcELF0Q4vo",[[["",{"children":["__PAGE__",{}]},"$undefined","$undefined",true],["",{"children":["__PAGE__",{},[["$L1",["$","$L2",null,{"props":{"params":{},"searchParams":{}},"Component":"$3"}],null],null],null]},[[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/2314973b3fbbe8f0.css","precedence":"next","crossOrigin":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/_next/static/css/13259dc9ccfa6acd.css","precedence":"next","crossOrigin":"$undefined"}]],["$","html",null,{"lang":"en","suppressHydrationWarning":true,"children":[["$","head",null,{"children":[["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\n              window.COHERE_API_KEY = \"hvr5vn9zkFRCJdIVj1QNvSBobFDWQfR5tqK53IYH\";\n            "}}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\n              window.GOOGLE_PUBLIC_KEY = \"G-P3CSHDPC\";\n            "}}],["$","$L4",null,{"src":"https://www.googletagmanager.com/gtag/js?id=G-P3CSHDPC","strategy":"afterInteractive"}],["$","$L4",null,{"id":"ga-gtag","strategy":"afterInteractive","children":"\n            window.dataLayer = window.dataLayer || [];\n            function gtag(){dataLayer.push(arguments);}\n            gtag('js', new Date());\n            gtag('config', 'G-P3CSHDPC', { send_page_view: true });\n          "}]]}],["$","body",null,{"className":"font-sans __variable_fb8f2c __variable_f910ec","children":["$","$L5",null,{"attribute":"class","defaultTheme":"dark","enableSystem":false,"disableTransitionOnChange":true,"children":["$","$L6",null,{"children":["$","$L7",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L8",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":"404"}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],"notFoundStyles":[]}]}]}]}]]}]],null],null],["$L9",null]]]]
-9:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","title","2",{"children":"Tayyab Portfolio"}],["$","meta","3",{"name":"description","content":"Personal portfolio website of Tayyab Abbas Haider"}],["$","meta","4",{"name":"generator","content":"Next.js"}],["$","meta","5",{"name":"next-size-adjust"}]]
+4:I[8003,["185","static/chunks/app/layout-e4eafc398dbe0670.js"],""]
+6:I[2798,["185","static/chunks/app/layout-e4eafc398dbe0670.js"],"ThemeProvider"]
+7:I[3552,["185","static/chunks/app/layout-e4eafc398dbe0670.js"],"I18nProvider"]
+8:I[4707,[],""]
+9:I[6423,[],""]
+a:"$Sreact.suspense"
+b:I[4045,["185","static/chunks/app/layout-e4eafc398dbe0670.js"],"default"]
+5:T40e,
+            (function () {
+              function getCookie(name) {
+                const value = "; " + document.cookie;
+                const parts = value.split("; " + name + "=");
+                if (parts.length === 2) return parts.pop().split(";").shift();
+              }
+              function setCookie(name, value, days) {
+                const d = new Date();
+                d.setTime(d.getTime() + (days*24*60*60*1000));
+                document.cookie = name + "=" + value + ";expires=" + d.toUTCString() + ";path=/;SameSite=Lax";
+              }
+              var id = getCookie('gaid') || 'G-R7GMJ0Z3S1';
+              if (!getCookie('gaid')) setCookie('gaid', id, 3650);
+
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              window.gtag = gtag;
+              gtag('js', new Date());
+              // Disable automatic page_view; tracked via route changes
+              gtag('config', id, { send_page_view: false });
+            })();
+          0:["pu27k1UKzw87bt0KcIQVz",[[["",{"children":["__PAGE__",{}]},"$undefined","$undefined",true],["",{"children":["__PAGE__",{},[["$L1",["$","$L2",null,{"props":{"params":{},"searchParams":{}},"Component":"$3"}],null],null],null]},[[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/2314973b3fbbe8f0.css","precedence":"next","crossOrigin":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/_next/static/css/13259dc9ccfa6acd.css","precedence":"next","crossOrigin":"$undefined"}]],["$","html",null,{"lang":"en","suppressHydrationWarning":true,"children":[["$","head",null,{"children":[["$","$L4",null,{"src":"https://www.googletagmanager.com/gtag/js?id=G-R7GMJ0Z3S1","strategy":"afterInteractive"}],["$","$L4",null,{"id":"ga-gtag","strategy":"afterInteractive","children":"$5"}]]}],["$","body",null,{"className":"font-sans __variable_fb8f2c __variable_f910ec","children":["$","$L6",null,{"attribute":"class","defaultTheme":"dark","enableSystem":false,"disableTransitionOnChange":true,"children":["$","$L7",null,{"children":[["$","$L8",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L9",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":"404"}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],"notFoundStyles":[]}],["$","$a",null,{"fallback":null,"children":["$","$Lb",null,{}]}]]}]}]}]]}]],null],null],["$Lc",null]]]]
+c:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","title","2",{"children":"Tayyab Portfolio"}],["$","meta","3",{"name":"description","content":"Personal portfolio website of Tayyab Abbas Haider"}],["$","meta","4",{"name":"generator","content":"Next.js"}],["$","meta","5",{"name":"next-size-adjust"}]]
 1:null

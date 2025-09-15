@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
-import { Analytics } from "@vercel/analytics/next";
+import Script from "next/script";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { I18nProvider } from "@/components/i18n-provider";
@@ -28,6 +28,27 @@ export default function RootLayout({
             `,
           }}
         />
+        {/* 👇 Google public key exposed to window (hardcoded) */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.GOOGLE_PUBLIC_KEY = "G-P3CSHDPC";
+            `,
+          }}
+        />
+        {/* Google Analytics (gtag.js) with hardcoded Measurement ID */}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=G-P3CSHDPC`}
+          strategy="afterInteractive"
+        />
+        <Script id="ga-gtag" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-P3CSHDPC', { send_page_view: true });
+          `}
+        </Script>
       </head>
       <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} disableTransitionOnChange>
@@ -35,7 +56,6 @@ export default function RootLayout({
             {children}
           </I18nProvider>
         </ThemeProvider>
-        <Analytics />
       </body>
     </html>
   );

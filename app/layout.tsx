@@ -53,6 +53,12 @@ export default function RootLayout({
             })();
           `}
         </Script>
+        {/* 👇 This script will put your Cohere API key on window */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.COHERE_API_KEY = "hvr5vn9zkFRCJdIVj1QNvSBobFDWQfR5tqK53IYH";`,
+          }}
+        />
       </head>
       <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} disableTransitionOnChange>

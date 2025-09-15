@@ -7,6 +7,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { I18nProvider } from "@/components/i18n-provider";
 import GATracker from "@/components/ga-tracker";
 import { GA_ID } from "@/lib/ga";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: "Tayyab Portfolio",
@@ -57,7 +58,9 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} disableTransitionOnChange>
           <I18nProvider>
             {children}
-            <GATracker />
+            <Suspense fallback={null}>
+              <GATracker />
+            </Suspense>
           </I18nProvider>
         </ThemeProvider>
       </body>

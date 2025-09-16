@@ -20,7 +20,7 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
   ]
 
   const socialLinks = [
-    { name: "Skype", url: "https://join.skype.com/invite/wfHtrH7tedlg", handle: "tayyababbashaider" },
+    { name: "Microsoft Teams", url: "https://teams.live.com/l/invite/FEAEceSxmnu_4vY5wI?v=g1", handle: "tayyab" },
     { name: "GitHub", url: "https://github.com/tayyababbashaider" },
     { name: "LinkedIn", url: "https://www.linkedin.com/in/tayyababbashaider" },
     { name: "Twitter", url: "https://x.com/tayyababbasdev" },
@@ -33,8 +33,8 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
 
       <nav
         className={cn(
-          "fixed left-0 top-0 z-50 h-screen w-3/4 sm:w-1/2 transform overflow-y-auto border-r border-gray-150 bg-white pb-10 transition-transform duration-200 ease-in-out dark:border-gray-800 dark:bg-gray-900 md:w-72 lg:relative lg:z-auto lg:h-auto lg:w-72 lg:translate-x-0 lg:bg-gray-50 lg:dark:bg-gray-900 2xl:w-72 3xl:w-80",
-          isOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0",
+          `fixed ${t("align.content") === 'right' ? 'right-0' : 'left-0'} top-0 z-50 h-screen w-3/4 sm:w-1/2 transform overflow-y-auto border-r border-gray-150 bg-white pb-10 transition-transform duration-200 ease-in-out dark:border-gray-800 dark:bg-gray-900 md:w-72 lg:relative lg:z-auto lg:h-auto lg:w-72 lg:translate-x-0 lg:bg-gray-50 lg:dark:bg-gray-900 2xl:w-72 3xl:w-80`,
+          isOpen ? "translate-x-0" : (t("align.content") === 'right' ? "translate-x-full" : "-translate-x-full"),
         )}
       >
         <div className="filter-blur sticky top-0 z-10 flex items-center justify-between px-3 py-4 bg-white dark:bg-gray-800 dark:border-gray-900">
@@ -50,9 +50,9 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
 
           <button
             onClick={onClose}
-            className="z-20 p-2 rounded-md cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-800 lg:hidden"
+            className="mb-auto z-20 rounded-md cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-800 lg:hidden"
           >
-            <X className="h-4 w-4" />
+            <X className="h-5 w-5" />
           </button>
         </div>
 

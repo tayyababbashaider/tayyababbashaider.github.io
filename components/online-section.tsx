@@ -16,7 +16,7 @@ export function OnlineSection() {
 
   return (
     <div className="grid items-start grid-cols-1 gap-6 md:grid-cols-12">
-      <h4 className="col-span-2 pt-8 text-lg font-extrabold text-black dark:text-white md:pt-0 text-left md:text-base md:font-normal md:text-opacity-40">
+      <h4 className={`col-span-2 pt-8 text-lg font-extrabold text-black dark:text-white md:pt-0 ${t("align.content") === 'right' ? 'text-right' : 'text-left'} md:text-base md:font-normal md:text-opacity-40`}>
         {t("online.title")}
       </h4>
       <div className="col-span-10">

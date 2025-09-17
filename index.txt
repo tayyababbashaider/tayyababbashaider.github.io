@@ -1,13 +1,23 @@
-2:I[9107,[],"ClientPageRoot"]
-3:I[9522,["487","static/chunks/487-6c0978cfc6919a14.js","931","static/chunks/app/page-ea4c5e2226eed79b.js"],"default",1]
-4:I[8003,["185","static/chunks/app/layout-82fc679e4fc647c7.js"],""]
-6:I[2798,["185","static/chunks/app/layout-82fc679e4fc647c7.js"],"ThemeProvider"]
-7:I[3552,["185","static/chunks/app/layout-82fc679e4fc647c7.js"],"I18nProvider"]
-8:I[4707,[],""]
-9:I[6423,[],""]
-a:"$Sreact.suspense"
-b:I[4045,["185","static/chunks/app/layout-82fc679e4fc647c7.js"],"default"]
-5:T40e,
+1:"$Sreact.fragment"
+2:I[1402,["177","static/chunks/app/layout-9b130f46293ffda6.js"],""]
+4:I[1901,["177","static/chunks/app/layout-9b130f46293ffda6.js"],"ThemeProvider"]
+5:I[6861,["177","static/chunks/app/layout-9b130f46293ffda6.js"],"I18nProvider"]
+6:I[9766,[],""]
+7:I[8924,[],""]
+8:"$Sreact.suspense"
+9:I[8990,["177","static/chunks/app/layout-9b130f46293ffda6.js"],"default"]
+a:I[1959,[],"ClientPageRoot"]
+b:I[220,["679","static/chunks/679-7d7664218fc3fe54.js","974","static/chunks/app/page-fc7b1f8cf88afe6f.js"],"default"]
+e:I[4431,[],"OutletBoundary"]
+10:I[5278,[],"AsyncMetadataOutlet"]
+12:I[4431,[],"ViewportBoundary"]
+14:I[4431,[],"MetadataBoundary"]
+16:I[7150,[],""]
+:HL["/_next/static/media/028c0d39d2e8f589-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/5b01f339abf2f1a5.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/css/0c145a58deb75e15.css","style"]
+:HL["/_next/static/css/6ad9841b43ad2bc9.css","style"]
+3:T40e,
             (function () {
               function getCookie(name) {
                 const value = "; " + document.cookie;
@@ -29,6 +39,10 @@ b:I[4045,["185","static/chunks/app/layout-82fc679e4fc647c7.js"],"default"]
               // Disable automatic page_view; tracked via route changes
               gtag('config', id, { send_page_view: false });
             })();
-          0:["84Y0Xd6AgGKLBIIfJ4_ay",[[["",{"children":["__PAGE__",{}]},"$undefined","$undefined",true],["",{"children":["__PAGE__",{},[["$L1",["$","$L2",null,{"props":{"params":{},"searchParams":{}},"Component":"$3"}],null],null],null]},[[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/0c145a58deb75e15.css","precedence":"next","crossOrigin":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/_next/static/css/13259dc9ccfa6acd.css","precedence":"next","crossOrigin":"$undefined"}]],["$","html",null,{"lang":"en","suppressHydrationWarning":true,"children":[["$","head",null,{"children":[["$","$L4",null,{"src":"https://www.googletagmanager.com/gtag/js?id=G-R7GMJ0Z3S1","strategy":"afterInteractive"}],["$","$L4",null,{"id":"ga-gtag","strategy":"afterInteractive","children":"$5"}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"window.COHERE_API_KEY = \"hvr5vn9zkFRCJdIVj1QNvSBobFDWQfR5tqK53IYH\";"}}]]}],["$","body",null,{"className":"font-sans __variable_fb8f2c __variable_f910ec","children":["$","$L6",null,{"attribute":"class","defaultTheme":"dark","enableSystem":false,"disableTransitionOnChange":true,"children":["$","$L7",null,{"children":[["$","$L8",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L9",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":"404"}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],"notFoundStyles":[]}],["$","$a",null,{"fallback":null,"children":["$","$Lb",null,{}]}]]}]}]}]]}]],null],null],["$Lc",null]]]]
-c:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","title","2",{"children":"Tayyab Portfolio"}],["$","meta","3",{"name":"description","content":"Personal portfolio website of Tayyab Abbas Haider"}],["$","meta","4",{"name":"generator","content":"Next.js"}],["$","meta","5",{"name":"next-size-adjust"}]]
-1:null
+          0:{"P":null,"b":"KyZJ464_XLTFPCTW_Vyek","p":"","c":["",""],"i":false,"f":[[["",{"children":["__PAGE__",{}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/0c145a58deb75e15.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/_next/static/css/6ad9841b43ad2bc9.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","suppressHydrationWarning":true,"children":[["$","head",null,{"children":[["$","$L2",null,{"src":"https://www.googletagmanager.com/gtag/js?id=G-R7GMJ0Z3S1","strategy":"afterInteractive"}],["$","$L2",null,{"id":"ga-gtag","strategy":"afterInteractive","children":"$3"}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"window.COHERE_API_KEY = \"hvr5vn9zkFRCJdIVj1QNvSBobFDWQfR5tqK53IYH\";"}}]]}],["$","body",null,{"className":"font-sans __variable_fb8f2c __variable_f910ec","children":["$","$L4",null,{"attribute":"class","defaultTheme":"dark","enableSystem":false,"disableTransitionOnChange":true,"children":["$","$L5",null,{"children":[["$","$L6",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}],["$","$8",null,{"fallback":null,"children":["$","$L9",null,{}]}]]}]}]}]]}]]}],{"children":["__PAGE__",["$","$1","c",{"children":[["$","$La",null,{"Component":"$b","searchParams":{},"params":{},"promises":["$@c","$@d"]}],null,["$","$Le",null,{"children":["$Lf",["$","$L10",null,{"promise":"$@11"}]]}]]}],{},null,false]},null,false],["$","$1","h",{"children":[null,[["$","$L12",null,{"children":"$L13"}],["$","meta",null,{"name":"next-size-adjust","content":""}]],["$","$L14",null,{"children":["$","div",null,{"hidden":true,"children":["$","$8",null,{"fallback":null,"children":"$L15"}]}]}]]}],false]],"m":"$undefined","G":["$16",[]],"s":false,"S":true}
+c:{}
+d:"$0:f:0:1:2:children:1:props:children:0:props:params"
+13:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+f:null
+11:{"metadata":[["$","title","0",{"children":"Tayyab Portfolio"}],["$","meta","1",{"name":"description","content":"Personal portfolio website of Tayyab Abbas Haider"}],["$","meta","2",{"name":"generator","content":"Next.js"}]],"error":null,"digest":"$undefined"}
+15:"$11:metadata"

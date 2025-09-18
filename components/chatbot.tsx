@@ -97,14 +97,19 @@ export function Chatbot() {
           <div className="h-50 overflow-y-auto p-3 bg-gradient-to-b from-indigo-50/50 to-transparent dark:from-indigo-900/20">
             {messages.map((message, index) => (
               <div key={index} className={`flex mb-2 ${message.isUser ? "justify-end" : "justify-start"}`}>
-                <div
-                  className={`w-3/4 px-3 py-2 rounded-2xl text-sm break-words ${message.isUser
-                    ? "bg-indigo-600 text-white rounded-br-md"
-                    : "bg-slate-100 dark:bg-slate-700 text-slate-900 dark:text-slate-100 rounded-bl-md"
+                                {message.isUser ? (
+                  <div
+                    className={`w-3/4 px-3 py-2 rounded-2xl text-sm break-words ${
+                      message.isUser
+                        ? "bg-indigo-600 text-white rounded-br-md"
+                        : "bg-slate-100 dark:bg-slate-700 text-slate-900 dark:text-slate-100 rounded-bl-md"
                     }`}
-                >
-                  {message.text}
-                </div>
+                  >
+                    {typeof message.text === "string" ? message.text : ""}
+                  </div>
+                ) : (
+                  <AssistantBubble text={typeof message.text === "string" ? message.text : ""} />
+                )}
               </div>
             ))}
             <div ref={messagesEndRef} />
@@ -142,7 +147,28 @@ export function Chatbot() {
     </div>
   )
 }
+function AssistantBubble({ text }: { text: string }) {
+  const ref = useRef<HTMLTextAreaElement>(null)
 
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    el.style.height = "auto"
+    el.style.overflow = "hidden"
+    el.style.height = `${el.scrollHeight}px`
+  }, [text])
+
+  return (
+    <textarea
+      ref={ref}
+      readOnly
+      value={text}
+      className="w-3/4 px-3 py-2 rounded-2xl text-sm bg-slate-100 dark:bg-slate-700 text-slate-900 dark:text-slate-100 rounded-bl-md border border-slate-300 dark:border-slate-600 resize-none whitespace-pre-wrap leading-5"
+      rows={1}
+      style={{ overflow: "hidden" }}
+    />
+  )
+}
 // Portfolio data and AI response generation
 const PORTFOLIO_DATA = {
   name: "Tayyab Abbas",
@@ -185,6 +211,7 @@ const PORTFOLIO_DATA = {
 async function generateResponse(query: string): Promise<string> {
   try {
     const apiKey = (window as any).COHERE_API_KEY;
+
     const systemPrompt = `
 You are an AI assistant for ${PORTFOLIO_DATA.name}'s portfolio website.
 Title: ${PORTFOLIO_DATA.title}
@@ -193,23 +220,53 @@ Skills: ${(PORTFOLIO_DATA.skills || []).join(", ")}
 Profiles: ${JSON.stringify(PORTFOLIO_DATA.profiles)}
 Profile Summary: ${PORTFOLIO_DATA.profile}
 `;
-    const res = await fetch("https://api.cohere.ai/v1/chat", {
+
+    const res = await fetch("https://api.cohere.ai/v2/chat", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${apiKey}`,
       },
       body: JSON.stringify({
-        model: "command",
-        message: query,
-        preamble: systemPrompt,
+        model: "command-a-03-2025",
+        messages: [
+          { role: "system", content: systemPrompt },
+          { role: "user", content: query },
+        ],
         temperature: 0.7,
         max_tokens: 500,
       }),
     });
+
+    if (!res.ok) {
+      return "I’m having trouble connecting to the assistant right now. Please try again later.";
+    }
+
     const data = await res.json();
-    return data.text ?? "Sorry, no response.";
-  } catch {
+
+    // Cohere v2 returns message.content as an array of blocks: [{ type: 'text', text: '...' }, ...]
+    const content = data?.message?.content;
+
+    if (typeof content === "string") {
+      return content;
+    }
+
+    if (Array.isArray(content)) {
+      const text = content
+        .filter((block: any) => block && (block.type === "text" || typeof block.text === "string"))
+        .map((block: any) => block.text || "")
+        .join("\n")
+        .trim();
+      if (text) return text;
+    }
+
+    if (content && typeof content === "object" && typeof content.text === "string") {
+      return content.text;
+    }
+
+    return "Sorry, no response.";
+  } catch (err) {
+    console.error(err);
     return "I’m having trouble connecting to the assistant right now. Please try again later.";
   }
 }

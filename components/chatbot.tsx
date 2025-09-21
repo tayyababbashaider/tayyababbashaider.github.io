@@ -57,7 +57,7 @@ export function Chatbot() {
     if (usePersonalServer) {
       // ---- Personal server endpoint ----
       try {
-        const apiUrl = "https://tayyababbas-my-gpt-server.hf.space/generate"
+        const apiUrl = "https://tayyababbas-my-python-server.hf.space/generate"
         const res = await fetch(apiUrl, {
           method: "POST",
           headers: { "Content-Type": "application/json" },

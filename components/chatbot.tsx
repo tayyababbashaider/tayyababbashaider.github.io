@@ -280,5 +280,5 @@ const PORTFOLIO_DATA = {
     stackoverflow: "https://stackoverflow.com/users/17666468/tayyababbashaider",
   },
   profile:
-    "Senior Software Engineer and Solutions Architect with 4+ years of experience developing scalable web applications and software solutions. Skilled in cloud, serverless, and OTT streaming architectures, with hands-on expertise in React, Vue, Laravel, and AWS services.",
+    "Senior Software Engineer and Solutions Architect with 6+ years of experience developing scalable web applications and software solutions. Skilled in cloud, serverless, and OTT streaming architectures, with hands-on expertise in React, Vue, Laravel, and AWS services.",
 }

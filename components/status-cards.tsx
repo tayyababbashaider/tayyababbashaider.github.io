@@ -116,7 +116,7 @@ function ExperienceCard() {
       </div>
       <div className="border-t border-gray-300 dark:border-gray-700"></div>
       <div className="p-4 flex items-center justify-center">
-        <div className="text-black dark:text-white font-bold text-6xl">4+</div>
+        <div className="text-black dark:text-white font-bold text-6xl">6+</div>
       </div>
     </div>
   )
